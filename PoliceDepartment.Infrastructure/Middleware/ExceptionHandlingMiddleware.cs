@@ -28,7 +28,7 @@ public sealed class ErrorHandlingMiddleware
     {
         var (statusCode, message, exceptionThrown) = exception switch
         {
-            CustomException => (StatusCodes.Status400BadRequest, exception.Message, 
+            BasePoliceDepartmentException => (StatusCodes.Status400BadRequest, exception.Message, 
                 exception.GetType().Name.Replace("Exception", string.Empty)),
             _ => (StatusCodes.Status500InternalServerError, "An error occurred.", nameof(exception))
         };

@@ -1,4 +1,5 @@
-﻿using PoliceDepartment.Application.Exceptions;
+﻿using PoliceDepartment.Application.Commands;
+using PoliceDepartment.Application.Exceptions;
 using PoliceDepartment.Core.Entities;
 
 namespace PoliceDepartment.Application.Services;
@@ -7,8 +8,12 @@ public class PoliceOfficersService
 {
     private readonly List<PoliceOfficer> Officers = new()
     {
-        new PoliceOfficer(Guid.NewGuid(), "Sandy", "Lopez", new DateOnly(1989, 9, 13), "#123-43-54"),
-        new PoliceOfficer(Guid.NewGuid(), "Randall", "Emsden", new DateOnly(1979, 12, 27), "#865-56-53")
+        new PoliceOfficer(
+            Guid.NewGuid(), "Sandy", "Lopez", 
+            new DateOnly(1989, 9, 13), "#123-43-54"),
+        new PoliceOfficer(
+            Guid.NewGuid(), "Randall", "Emsden", 
+            new DateOnly(1979, 12, 27), "#865-56-53")
     };
 
     public IEnumerable<PoliceOfficer> GetAll() 
@@ -38,22 +43,22 @@ public class PoliceOfficersService
         return Officers.Remove(officer);
     }
 
-    public Guid Add(PoliceOfficer policeOfficer)
+    public Guid Add(CreatePoliceOfficerCommand policeOfficer)
     {
-        var officer = Officers.SingleOrDefault(officer => officer.Id == policeOfficer.Id);
+        var officer = Officers.SingleOrDefault(officer => officer.BadgeNumber == policeOfficer.BadgeNumber);
         
         if (officer is null)
         {
-            throw new OfficerAlreadyExists(policeOfficer.Id);
+            throw new BadgeNumberAlreadyRegistered(policeOfficer.BadgeNumber.Value);
         }
-        
-        policeOfficer.Id = Guid.NewGuid();
-        Officers.Add(policeOfficer);
 
-        return policeOfficer.Id;
+        var newOfficer = new PoliceOfficer(policeOfficer.Id, policeOfficer.FirstName, policeOfficer.LastName,
+            policeOfficer.BirthDate, policeOfficer.BadgeNumber);
+
+        return newOfficer.Id;
     }
     
-    public void Update(PoliceOfficer policeOfficer, Guid id)
+    public bool Update(PoliceOfficer policeOfficer, Guid id)
     {
         var officer = Officers.SingleOrDefault(officer => officer.Id == id);
         
@@ -63,18 +68,6 @@ public class PoliceOfficersService
         }
 
         officer.BadgeNumber = policeOfficer.BadgeNumber;
+        return true;
     }
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
 }

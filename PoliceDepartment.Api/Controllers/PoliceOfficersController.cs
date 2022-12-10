@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PoliceDepartment.Application.Commands;
 using PoliceDepartment.Application.Services;
 using PoliceDepartment.Core.Entities;
 
@@ -20,9 +21,10 @@ public class PoliceOfficersController : ControllerBase
     public ActionResult Delete(Guid id) => Ok(_policeOfficersService.Remove(id));
 
     [HttpPost]
-    public ActionResult<PoliceOfficer> Post(PoliceOfficer policeOfficer)
+    public ActionResult<PoliceOfficer> Post(CreatePoliceOfficerCommand policeOfficer)
         => CreatedAtAction(nameof(Get), new { Id = _policeOfficersService.Add(policeOfficer) }, null);
 
     [HttpPut("{id:guid}")]
-    public ActionResult Put(PoliceOfficer policeOfficer, Guid id) => Ok();
+    public ActionResult Put(PoliceOfficer policeOfficer, Guid id) 
+        => Ok(_policeOfficersService.Update(policeOfficer, id));
 }
