@@ -53,6 +53,18 @@ public class PoliceOfficersService
         return policeOfficer.Id;
     }
     
+    public void Update(PoliceOfficer policeOfficer, Guid id)
+    {
+        var officer = Officers.SingleOrDefault(officer => officer.Id == id);
+        
+        if (officer is null)
+        {
+            throw new OfficerNotFoundException(policeOfficer.Id);
+        }
+
+        officer.BadgeNumber = policeOfficer.BadgeNumber;
+    }
+    
     
     
     

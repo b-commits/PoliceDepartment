@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace PoliceDepartment.Core.Entities;
+﻿namespace PoliceDepartment.Core.Entities;
 
 public sealed class PoliceOfficer
 {
@@ -10,7 +8,9 @@ public sealed class PoliceOfficer
     public string BadgeNumber { get; set; }
     public DateOnly BirthDate { get; }
 
-    public PoliceOfficer(Guid id, string firstName, string lastName, DateOnly birthDate, string badgeNumber)
+    public PoliceOfficer(
+        Guid id, string firstName, string lastName, 
+        DateOnly birthDate, string badgeNumber)
     {
         Id = id;
         FirstName = firstName;
@@ -20,7 +20,7 @@ public sealed class PoliceOfficer
     }
 
     public override string ToString()
-    {
-        return $"[{Id}] Officer {FirstName} {LastName}, born {BirthDate}, badge number {BadgeNumber}.";
-    }
+        => $"[{Id}] Officer {FirstName} {LastName}, " +
+           $"born {BirthDate}, badge number {BadgeNumber}.";
+    
 }
