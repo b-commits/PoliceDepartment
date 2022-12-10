@@ -4,7 +4,15 @@ using PoliceDepartment.Core.Entities;
 
 namespace PoliceDepartment.Application.Services;
 
-public class PoliceOfficersService
+public interface IPoliceOfficerService
+{
+    IEnumerable<PoliceOfficer> GetAll();
+    PoliceOfficer GetByGuid(Guid id);
+    Guid Add(CreatePoliceOfficerCommand policeOfficer);
+    bool Remove(Guid id);
+}
+
+public class PoliceOfficersService : IPoliceOfficerService
 {
     private readonly List<PoliceOfficer> Officers = new()
     {

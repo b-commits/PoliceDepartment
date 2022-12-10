@@ -9,7 +9,12 @@ namespace PoliceDepartment.Api.Controllers;
 [Route("[controller]")]
 public class PoliceOfficersController : ControllerBase
 {
-    private readonly PoliceOfficersService _policeOfficersService = new();
+    private readonly PoliceOfficersService _policeOfficersService;
+
+    public PoliceOfficersController(PoliceOfficersService policeOfficersService)
+    {
+        _policeOfficersService = policeOfficersService;
+    }
 
     [HttpGet]
     public ActionResult<IEnumerable<PoliceOfficer>> Get() => Ok(_policeOfficersService.GetAll());
