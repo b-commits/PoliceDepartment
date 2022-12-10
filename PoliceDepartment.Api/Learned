@@ -1,0 +1,2 @@
+﻿1. .NET 7 pozwala na serializację DateOnly i TimeOnly
+2. Controller needs to be public
