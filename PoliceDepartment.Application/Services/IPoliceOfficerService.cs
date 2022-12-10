@@ -5,8 +5,8 @@ namespace PoliceDepartment.Application.Services;
 
 public interface IPoliceOfficerService
 {
-    IEnumerable<PoliceOfficer> GetAll();
-    PoliceOfficer GetByGuid(Guid id);
-    Guid Add(CreatePoliceOfficerCommand command);
-    bool Remove(DeletePoliceOfficerCommand command);
+    Task<IEnumerable<PoliceOfficer>> GetAll();
+    Task<PoliceOfficer> GetByGuid(Guid id);
+    Task<Guid> Add(CreatePoliceOfficerCommand command);
+    Task<bool> Remove(DeletePoliceOfficerCommand command);
 }

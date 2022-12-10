@@ -1,27 +1,25 @@
 ﻿using PoliceDepartment.Application.Commands;
 using PoliceDepartment.Application.Exceptions;
 using PoliceDepartment.Core.Entities;
+using PoliceDepartment.Core.Repositories;
 
 namespace PoliceDepartment.Application.Services;
 
 public class PoliceOfficersService : IPoliceOfficerService
 {
-    private readonly List<PoliceOfficer> Officers = new()
-    {
-        new PoliceOfficer(
-            Guid.NewGuid(), "Sandy", "Lopez", 
-            new DateOnly(1989, 9, 13), "#123-43-54"),
-        new PoliceOfficer(
-            Guid.NewGuid(), "Randall", "Emsden", 
-            new DateOnly(1979, 12, 27), "#865-56-53")
-    };
+    private readonly IPoliceOfficerRepository _policeOfficerRepository;
 
-    public IEnumerable<PoliceOfficer> GetAll() 
-        => Officers;
-
-    public PoliceOfficer GetByGuid(Guid id)
+    public PoliceOfficersService(IPoliceOfficerRepository policeOfficerRepository)
     {
-        var officer = Officers.SingleOrDefault(officer => officer.Id == id);
+        _policeOfficerRepository = policeOfficerRepository;
+    }
+
+    public async Task<IEnumerable<PoliceOfficer>> GetAll()
+        => await _policeOfficerRepository.GetAll();
+
+    public async Task<PoliceOfficer> GetByGuid(Guid id)
+    {
+        var officer = await _policeOfficerRepository.GetByGuid(id);
         
         if (officer is null)
         {
@@ -31,23 +29,23 @@ public class PoliceOfficersService : IPoliceOfficerService
         return officer;
     }
     
-    public bool Remove(DeletePoliceOfficerCommand command)
+    public async Task<bool> Remove(DeletePoliceOfficerCommand command)
     {
-        var officer = Officers.SingleOrDefault(officer => officer.Id == command.Id);
+        var officer = await _policeOfficerRepository.GetByGuid(command.Id);
         
         if (officer is null)
         {
             throw new OfficerNotFoundException(command.Id);
         }
-        
-        return Officers.Remove(officer);
+
+        return default;
     }
 
-    public Guid Add(CreatePoliceOfficerCommand policeOfficer)
+    public async Task<Guid> Add(CreatePoliceOfficerCommand policeOfficer)
     {
-        var officer = Officers.SingleOrDefault(officer => officer.BadgeNumber == policeOfficer.BadgeNumber);
+        var existingOfficer = await _policeOfficerRepository.GetByBadgeNumber(policeOfficer.BadgeNumber);
         
-        if (officer is null)
+        if (existingOfficer is not null)
         {
             throw new BadgeNumberAlreadyRegistered(policeOfficer.BadgeNumber.Value);
         }
@@ -58,16 +56,16 @@ public class PoliceOfficersService : IPoliceOfficerService
         return newOfficer.Id;
     }
     
-    public bool Update(PoliceOfficer policeOfficer, Guid id)
+    public async Task<bool> Update(PoliceOfficer policeOfficer, Guid id)
     {
-        var officer = Officers.SingleOrDefault(officer => officer.Id == id);
+        var existingOfficer = await _policeOfficerRepository.GetByGuid(id);
         
-        if (officer is null)
+        if (existingOfficer is null)
         {
             throw new OfficerNotFoundException(policeOfficer.Id);
         }
 
-        officer.BadgeNumber.Value = policeOfficer.BadgeNumber.Value;
+        existingOfficer.BadgeNumber.Value = policeOfficer.BadgeNumber.Value;
         return true;
     }
 }
