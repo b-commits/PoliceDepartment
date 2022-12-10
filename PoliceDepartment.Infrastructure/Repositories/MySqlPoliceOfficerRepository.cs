@@ -8,30 +8,42 @@ namespace PoliceDepartment.Infrastructure.Repositories;
 
 internal sealed class MySqlPoliceOfficerRepository : IPoliceOfficerRepository
 {
-    private readonly DbSet<PoliceOfficer> _policeOfficers;
+    private readonly PoliceDepartmentDbContext _dbContext;
 
     public MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbContext)
     {
-        _policeOfficers = dbContext.PoliceOfficers;
+        _dbContext = dbContext;
     }
 
-    public async Task<IEnumerable<PoliceOfficer>> GetAll()
-        => await _policeOfficers.ToListAsync();
+    public Task<List<PoliceOfficer>> GetAll()
+        => _dbContext.PoliceOfficers.ToListAsync();
 
     public Task<PoliceOfficer?> GetByGuid(Guid id)
-        => _policeOfficers.SingleOrDefaultAsync(policeOfficer => policeOfficer.Id == id);
+        => _dbContext.PoliceOfficers.SingleOrDefaultAsync(policeOfficer => policeOfficer.Id == id);
 
     public Task<PoliceOfficer?> GetByBadgeNumber(BadgeNumber badgeNumber)
-        => _policeOfficers.SingleOrDefaultAsync(policeOfficer => policeOfficer.BadgeNumber == badgeNumber);
+        => _dbContext.PoliceOfficers.SingleOrDefaultAsync(policeOfficer => policeOfficer.BadgeNumber == badgeNumber);
 
-    public async Task Add(PoliceOfficer policeOfficer)
-        => await _policeOfficers.AddAsync(policeOfficer);
+    public Task Add(PoliceOfficer policeOfficer)
+    {
+        _dbContext.AddAsync(policeOfficer);
+        _dbContext.SaveChangesAsync();
+        return Task.CompletedTask;
+    }
 
-    public void Remove(PoliceOfficer policeOfficer)
-        => _policeOfficers.Remove(policeOfficer);
+    public Task Remove(PoliceOfficer policeOfficer)
+    {
+        _dbContext.PoliceOfficers.Remove(policeOfficer);
+        _dbContext.SaveChangesAsync();
+        return Task.CompletedTask;
+    }
 
-    public void Update(PoliceOfficer policeOfficer)
-        => _policeOfficers.Update(policeOfficer);
-    
-    
+    public Task Update(PoliceOfficer policeOfficer)
+    {
+        _dbContext.PoliceOfficers.Update(policeOfficer);
+        _dbContext.SaveChangesAsync();
+        return Task.CompletedTask;
+    }
+
+
 }
