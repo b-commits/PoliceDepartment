@@ -15,7 +15,7 @@ internal sealed class PoliceOfficerConfiguration : IEntityTypeConfiguration<Poli
             .Property(x => x.BadgeNumber)
             .HasConversion(x => x.Value, x => new BadgeNumber(x));
         builder.Property(x => x.BirthDate)
-            .HasConversion(x => x.Value,
-                x => new BirthDate(x));
+            .HasConversion(x => x.Value.ToDateTime(TimeOnly.MinValue),
+                x => DateOnly.FromDateTime(x));
     }
 }

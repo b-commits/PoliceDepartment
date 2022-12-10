@@ -5,7 +5,7 @@ namespace PoliceDepartment.Core.ValueObjects;
 
 public sealed record BadgeNumber
 {
-    public string Value { get; }
+    public string Value { get; set; }
 
     public BadgeNumber(string value)
     {

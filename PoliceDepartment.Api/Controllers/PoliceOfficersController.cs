@@ -23,11 +23,11 @@ public class PoliceOfficersController : ControllerBase
     public ActionResult<PoliceOfficer> Get(Guid id) => Ok(_policeOfficersService.GetByGuid(id));
 
     [HttpDelete("{id:guid}")]
-    public ActionResult Delete(Guid id) => Ok(_policeOfficersService.Remove(id));
+    public ActionResult Delete(DeletePoliceOfficerCommand command) => Ok(_policeOfficersService.Remove(command));
 
     [HttpPost]
-    public ActionResult<PoliceOfficer> Post(CreatePoliceOfficerCommand policeOfficer)
-        => CreatedAtAction(nameof(Get), new { Id = _policeOfficersService.Add(policeOfficer) }, null);
+    public ActionResult<PoliceOfficer> Post(CreatePoliceOfficerCommand command)
+        => CreatedAtAction(nameof(Get), new { Id = _policeOfficersService.Add(command) });
 
     [HttpPut("{id:guid}")]
     public ActionResult Put(PoliceOfficer policeOfficer, Guid id) 

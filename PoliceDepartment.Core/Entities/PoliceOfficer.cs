@@ -4,11 +4,11 @@ namespace PoliceDepartment.Core.Entities;
 
 public sealed class PoliceOfficer
 {
-    public Guid Id { get; set; }
-    public string FirstName { get; }
-    public string LastName { get; }
-    public BadgeNumber BadgeNumber { get; set; }
-    public BirthDate BirthDate { get; }
+    public Guid Id { get; private set; }
+    public string FirstName { get; private set; }
+    public string LastName { get; private set; }
+    public BadgeNumber BadgeNumber { get; private set; }
+    public BirthDate BirthDate { get; private set; }
 
     public PoliceOfficer(
         Guid id, string firstName, string lastName, 

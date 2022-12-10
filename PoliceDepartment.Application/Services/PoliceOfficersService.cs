@@ -4,14 +4,6 @@ using PoliceDepartment.Core.Entities;
 
 namespace PoliceDepartment.Application.Services;
 
-public interface IPoliceOfficerService
-{
-    IEnumerable<PoliceOfficer> GetAll();
-    PoliceOfficer GetByGuid(Guid id);
-    Guid Add(CreatePoliceOfficerCommand policeOfficer);
-    bool Remove(Guid id);
-}
-
 public class PoliceOfficersService : IPoliceOfficerService
 {
     private readonly List<PoliceOfficer> Officers = new()
@@ -39,13 +31,13 @@ public class PoliceOfficersService : IPoliceOfficerService
         return officer;
     }
     
-    public bool Remove(Guid id)
+    public bool Remove(DeletePoliceOfficerCommand command)
     {
-        var officer = Officers.SingleOrDefault(officer => officer.Id == id);
+        var officer = Officers.SingleOrDefault(officer => officer.Id == command.Id);
         
         if (officer is null)
         {
-            throw new OfficerNotFoundException(id);
+            throw new OfficerNotFoundException(command.Id);
         }
         
         return Officers.Remove(officer);
@@ -75,7 +67,7 @@ public class PoliceOfficersService : IPoliceOfficerService
             throw new OfficerNotFoundException(policeOfficer.Id);
         }
 
-        officer.BadgeNumber = policeOfficer.BadgeNumber;
+        officer.BadgeNumber.Value = policeOfficer.BadgeNumber.Value;
         return true;
     }
 }
