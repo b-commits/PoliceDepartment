@@ -1,18 +1,17 @@
-﻿using PoliceDepartment.Core.ValueObjects;
+﻿using System.Diagnostics.CodeAnalysis;
+using PoliceDepartment.Core.ValueObjects;
 
 namespace PoliceDepartment.Core.Entities;
 
+[SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
+[SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Local")]
 public sealed class PoliceOfficer
 {
-    public Guid Id { get; private set; }
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public BadgeNumber BadgeNumber { get; private set; }
-    public BirthDate BirthDate { get; private set; }
-
-    public PoliceOfficer()
-    {
-    }
+    public Guid Id { get; private init; }
+    public string FirstName { get; private init; }
+    public string LastName { get; private init; }
+    public BadgeNumber BadgeNumber { get; private init; }
+    public BirthDate BirthDate { get; private init; }
 
     public PoliceOfficer(
         Guid id, string firstName, string lastName, 

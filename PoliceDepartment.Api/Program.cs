@@ -8,7 +8,6 @@ builder.Services.AddControllers();
 builder.Services.AddPoliceDepartmentDatabase();
 builder.Services.AddScoped<IPoliceOfficerService, PoliceOfficersService>();
 
-
 var app = builder.Build();
 
 app.UseHttpsRedirection();

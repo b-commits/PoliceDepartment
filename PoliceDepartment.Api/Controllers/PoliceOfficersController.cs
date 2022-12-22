@@ -7,7 +7,7 @@ namespace PoliceDepartment.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PoliceOfficersController : ControllerBase
+public sealed class PoliceOfficersController : ControllerBase
 {
     private readonly IPoliceOfficerService _policeOfficersService;
 

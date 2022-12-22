@@ -4,7 +4,7 @@ namespace PoliceDepartment.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class OperationalGroupsController : ControllerBase
+public sealed class OperationalGroupsController : ControllerBase
 {
     [HttpPost]
     public ActionResult Post(OperationalGroup group, long id)

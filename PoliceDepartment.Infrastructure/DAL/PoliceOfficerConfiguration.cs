@@ -9,11 +9,10 @@ internal sealed class PoliceOfficerConfiguration : IEntityTypeConfiguration<Poli
 {
     public void Configure(EntityTypeBuilder<PoliceOfficer> builder)
     {
-        builder
-            .HasKey(x => x.Id);
-        builder
-            .Property(x => x.BadgeNumber)
-            .HasConversion(x => x.Value, x => new BadgeNumber(x));
+        builder.HasKey(x => x.Id);
+        builder.Property(x => x.BadgeNumber)
+            .HasConversion(x => x.Value,
+                x => new BadgeNumber(x));
         builder.Property(x => x.BirthDate)
             .HasConversion(x => x.Value.ToDateTime(TimeOnly.MinValue),
                 x => DateOnly.FromDateTime(x));
