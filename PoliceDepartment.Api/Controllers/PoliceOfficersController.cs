@@ -17,19 +17,22 @@ public class PoliceOfficersController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<PoliceOfficer>> Get() => Ok(_policeOfficersService.GetAll());
+    public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get() 
+        => Ok(await _policeOfficersService.GetAll());
 
     [HttpGet("{id:guid}")]
-    public ActionResult<PoliceOfficer> Get(Guid id) => Ok(_policeOfficersService.GetByGuid(id));
+    public async Task<ActionResult<PoliceOfficer>> Get(Guid id) 
+        => Ok(await _policeOfficersService.GetByGuid(id));
 
     [HttpDelete("{id:guid}")]
-    public ActionResult Delete(DeletePoliceOfficerCommand command) => Ok(_policeOfficersService.Remove(command));
+    public async Task<ActionResult> Delete(DeletePoliceOfficerCommand command) 
+        => Ok(await _policeOfficersService.Remove(command));
 
     [HttpPost]
-    public ActionResult<PoliceOfficer> Post(CreatePoliceOfficerCommand command)
-        => CreatedAtAction(nameof(Get), new { Id = _policeOfficersService.Add(command) });
+    public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command)
+        => CreatedAtAction(nameof(Get), new { Id = await _policeOfficersService.Add(command) });
 
     [HttpPut("{id:guid}")]
-    public ActionResult Put(PoliceOfficer policeOfficer, Guid id) 
-        => Ok(_policeOfficersService.Update(policeOfficer, id));
+    public async Task<ActionResult> Put(PoliceOfficer policeOfficer, Guid id) 
+        => Ok(await _policeOfficersService.Update(policeOfficer, id));
 }
