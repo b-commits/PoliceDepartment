@@ -6,7 +6,7 @@ using PoliceDepartment.Infrastructure.DAL;
 
 namespace PoliceDepartment.Infrastructure.Repositories;
 
-internal sealed class MySqlPoliceOfficerRepository : IPoliceOfficerRepository
+public sealed class MySqlPoliceOfficerRepository : IPoliceOfficerRepository
 {
     private readonly PoliceDepartmentDbContext _dbContext;
 

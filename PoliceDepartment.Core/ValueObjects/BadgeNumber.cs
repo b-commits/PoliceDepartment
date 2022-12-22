@@ -18,7 +18,7 @@ public sealed record BadgeNumber
 
     private static bool HasCorrectBadgeFormat(string value)
     {
-        var badgeNumberFormat = new Regex("^#-[0-9]{3}-[0-9]{3}-[0-9]{3}}$",
+        var badgeNumberFormat = new Regex("^#-[0-9]{3}-[0-9]{3}-[0-9]{3}$",
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
         return badgeNumberFormat.IsMatch(value);
     }

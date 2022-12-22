@@ -1,6 +1,22 @@
-﻿namespace PoliceDepartment.Api.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
 
-public class OperationalGroupsController
+namespace PoliceDepartment.Api.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class OperationalGroupsController : ControllerBase
 {
-    
+    [HttpPost]
+    public ActionResult Post(OperationalGroup group, long id)
+    {
+        var modelState = ModelState;
+        Console.WriteLine(group);
+        return Ok();
+    }
+}
+
+
+public class OperationalGroup
+{
+    public string Name { get; set; }
 }

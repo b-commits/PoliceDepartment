@@ -19,6 +19,7 @@ public class PoliceDepartmentDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+        modelBuilder.Seed();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

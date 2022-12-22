@@ -1,3 +1,6 @@
 ﻿1. .NET 7 pozwala na serializację DateOnly i TimeOnly
 2. Controller needs to be public
 3. Private settery wymagane przez Ef Core
+4. Migration naming convention is to use camel case e.g. AddedPoliceOfficerTableConstraints
+5. Design package is for building migrations. Potrzeba więc do EF trzech lib: connector, EF oraz design.
+6. Do EF trzeba mieć default constructor
