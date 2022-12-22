@@ -9,9 +9,9 @@ namespace PoliceDepartment.Api.Controllers;
 [Route("[controller]")]
 public class PoliceOfficersController : ControllerBase
 {
-    private readonly PoliceOfficersService _policeOfficersService;
+    private readonly IPoliceOfficerService _policeOfficersService;
 
-    public PoliceOfficersController(PoliceOfficersService policeOfficersService)
+    public PoliceOfficersController(IPoliceOfficerService policeOfficersService)
     {
         _policeOfficersService = policeOfficersService;
     }

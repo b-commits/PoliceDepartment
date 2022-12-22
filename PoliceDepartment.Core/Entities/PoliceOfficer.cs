@@ -10,6 +10,10 @@ public sealed class PoliceOfficer
     public BadgeNumber BadgeNumber { get; private set; }
     public BirthDate BirthDate { get; private set; }
 
+    public PoliceOfficer()
+    {
+    }
+
     public PoliceOfficer(
         Guid id, string firstName, string lastName, 
         BirthDate birthDate, BadgeNumber badgeNumber)
