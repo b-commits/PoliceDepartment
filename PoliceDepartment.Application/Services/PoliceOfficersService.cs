@@ -29,7 +29,7 @@ public class PoliceOfficersService : IPoliceOfficerService
         return officer;
     }
     
-    public async Task<bool> Remove(DeletePoliceOfficerCommand command)
+    public async Task Remove(DeletePoliceOfficerCommand command)
     {
         var officer = await _policeOfficerRepository.GetByGuid(command.Id);
         
@@ -37,8 +37,8 @@ public class PoliceOfficersService : IPoliceOfficerService
         {
             throw new OfficerNotFoundException(command.Id);
         }
-
-        return default;
+        
+        await _policeOfficerRepository.Remove(officer);
     }
 
     public async Task<Guid> Add(CreatePoliceOfficerCommand policeOfficer)
@@ -52,6 +52,8 @@ public class PoliceOfficersService : IPoliceOfficerService
 
         var newOfficer = new PoliceOfficer(policeOfficer.Id, policeOfficer.FirstName, policeOfficer.LastName,
             policeOfficer.BirthDate, policeOfficer.BadgeNumber);
+
+        await _policeOfficerRepository.Add(newOfficer);
 
         return newOfficer.Id;
     }

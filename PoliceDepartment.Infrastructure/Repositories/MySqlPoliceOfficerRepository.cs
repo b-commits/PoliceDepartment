@@ -24,25 +24,22 @@ public sealed class MySqlPoliceOfficerRepository : IPoliceOfficerRepository
     public Task<PoliceOfficer?> GetByBadgeNumber(BadgeNumber badgeNumber)
         => _dbContext.PoliceOfficers.SingleOrDefaultAsync(policeOfficer => policeOfficer.BadgeNumber == badgeNumber);
 
-    public Task Add(PoliceOfficer policeOfficer)
+    public async Task Add(PoliceOfficer policeOfficer)
     {
-        _dbContext.AddAsync(policeOfficer);
-        _dbContext.SaveChangesAsync();
-        return Task.CompletedTask;
+        await _dbContext.AddAsync(policeOfficer);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task Remove(PoliceOfficer policeOfficer)
+    public async Task Remove(PoliceOfficer policeOfficer)
     {
         _dbContext.PoliceOfficers.Remove(policeOfficer);
-        _dbContext.SaveChangesAsync();
-        return Task.CompletedTask;
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task Update(PoliceOfficer policeOfficer)
+    public async Task Update(PoliceOfficer policeOfficer)
     {
         _dbContext.PoliceOfficers.Update(policeOfficer);
-        _dbContext.SaveChangesAsync();
-        return Task.CompletedTask;
+        await _dbContext.SaveChangesAsync();
     }
 
 

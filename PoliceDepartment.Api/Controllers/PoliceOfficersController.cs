@@ -25,8 +25,11 @@ public sealed class PoliceOfficersController : ControllerBase
         => Ok(await _policeOfficersService.GetByGuid(id));
 
     [HttpDelete("{id:guid}")]
-    public async Task<ActionResult> Delete(DeletePoliceOfficerCommand command) 
-        => Ok(await _policeOfficersService.Remove(command));
+    public async Task<ActionResult> Delete(Guid id)
+    {
+        await _policeOfficersService.Remove(new DeletePoliceOfficerCommand(id));
+        return NoContent();
+    }
 
     [HttpPost]
     public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command)
