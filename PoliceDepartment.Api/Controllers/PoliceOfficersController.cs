@@ -17,23 +17,23 @@ public sealed class PoliceOfficersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get() 
-        => Ok(await _policeOfficersService.GetAll());
+    public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get() =>
+         Ok(await _policeOfficersService.GetAllAsync());
 
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<PoliceOfficer>> Get(Guid id) 
-        => Ok(await _policeOfficersService.GetByGuid(id));
+        => Ok(await _policeOfficersService.GetByGuidAsync(id));
 
     [HttpDelete("{id:guid}")]
     public async Task<ActionResult> Delete(Guid id)
     {
-        await _policeOfficersService.Remove(new DeletePoliceOfficerCommand(id));
+        await _policeOfficersService.RemoveAsync(new DeletePoliceOfficerCommand(id));
         return NoContent();
     }
 
     [HttpPost]
     public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command)
-        => CreatedAtAction(nameof(Get), new { Id = await _policeOfficersService.Add(command) });
+        => CreatedAtAction(nameof(Get), new { Id = await _policeOfficersService.AddAsync(command) });
 
     [HttpPut("{id:guid}")]
     public async Task<ActionResult> Put(PoliceOfficer policeOfficer, Guid id) 

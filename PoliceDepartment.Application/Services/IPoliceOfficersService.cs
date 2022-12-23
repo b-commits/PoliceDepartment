@@ -5,9 +5,9 @@ namespace PoliceDepartment.Application.Services;
 
 public interface IPoliceOfficerService
 {
-    Task<IEnumerable<PoliceOfficer>> GetAll();
-    Task<PoliceOfficer> GetByGuid(Guid id);
-    Task<Guid> Add(CreatePoliceOfficerCommand command);
-    Task Remove(DeletePoliceOfficerCommand command);
+    Task<IEnumerable<PoliceOfficer>> GetAllAsync();
+    Task<PoliceOfficer> GetByGuidAsync(Guid id);
+    Task<Guid> AddAsync(CreatePoliceOfficerCommand command);
+    Task RemoveAsync(DeletePoliceOfficerCommand command);
     Task<bool> Update(PoliceOfficer policeOfficer, Guid id);
 }

@@ -5,10 +5,10 @@ namespace PoliceDepartment.Core.Repositories;
 
 public interface IPoliceOfficerRepository
 {
-    Task<List<PoliceOfficer>> GetAll();
-    Task<PoliceOfficer?> GetByGuid(Guid id);
-    Task<PoliceOfficer?> GetByBadgeNumber(BadgeNumber badgeNumber);
-    Task Add(PoliceOfficer policeOfficer);
-    Task Remove(PoliceOfficer policeOfficer);
-    Task Update(PoliceOfficer policeOfficer);
+    Task<IEnumerable<PoliceOfficer>> GetAllAsync();
+    Task<PoliceOfficer?> GetByGuidAsync(Guid id);
+    Task<PoliceOfficer?> GetByBadgeNumberAsync(BadgeNumber badgeNumber);
+    Task AddAsync(PoliceOfficer policeOfficer);
+    Task RemoveAsync(PoliceOfficer policeOfficer);
+    Task UpdateAsync(PoliceOfficer policeOfficer);
 }

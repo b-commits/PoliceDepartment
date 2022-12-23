@@ -14,12 +14,11 @@ public class PoliceOfficersService : IPoliceOfficerService
         _policeOfficerRepository = policeOfficerRepository;
     }
 
-    public async Task<IEnumerable<PoliceOfficer>> GetAll()
-        => await _policeOfficerRepository.GetAll();
+    public Task<IEnumerable<PoliceOfficer>> GetAllAsync() => _policeOfficerRepository.GetAllAsync();
 
-    public async Task<PoliceOfficer> GetByGuid(Guid id)
+    public async Task<PoliceOfficer> GetByGuidAsync(Guid id)
     {
-        var officer = await _policeOfficerRepository.GetByGuid(id);
+        var officer = await _policeOfficerRepository.GetByGuidAsync(id);
         
         if (officer is null)
         {
@@ -29,21 +28,21 @@ public class PoliceOfficersService : IPoliceOfficerService
         return officer;
     }
     
-    public async Task Remove(DeletePoliceOfficerCommand command)
+    public async Task RemoveAsync(DeletePoliceOfficerCommand command)
     {
-        var officer = await _policeOfficerRepository.GetByGuid(command.Id);
+        var officer = await _policeOfficerRepository.GetByGuidAsync(command.Id);
         
         if (officer is null)
         {
             throw new OfficerNotFoundException(command.Id);
         }
         
-        await _policeOfficerRepository.Remove(officer);
+        await _policeOfficerRepository.RemoveAsync(officer);
     }
 
-    public async Task<Guid> Add(CreatePoliceOfficerCommand policeOfficer)
+    public async Task<Guid> AddAsync(CreatePoliceOfficerCommand policeOfficer)
     {
-        var existingOfficer = await _policeOfficerRepository.GetByBadgeNumber(policeOfficer.BadgeNumber);
+        var existingOfficer = await _policeOfficerRepository.GetByBadgeNumberAsync(policeOfficer.BadgeNumber);
         
         if (existingOfficer is not null)
         {
@@ -53,14 +52,14 @@ public class PoliceOfficersService : IPoliceOfficerService
         var newOfficer = new PoliceOfficer(policeOfficer.Id, policeOfficer.FirstName, policeOfficer.LastName,
             policeOfficer.BirthDate, policeOfficer.BadgeNumber);
 
-        await _policeOfficerRepository.Add(newOfficer);
+        await _policeOfficerRepository.AddAsync(newOfficer);
 
         return newOfficer.Id;
     }
     
     public async Task<bool> Update(PoliceOfficer policeOfficer, Guid id)
     {
-        var existingOfficer = await _policeOfficerRepository.GetByGuid(id);
+        var existingOfficer = await _policeOfficerRepository.GetByGuidAsync(id);
         
         if (existingOfficer is null)
         {
