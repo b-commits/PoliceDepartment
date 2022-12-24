@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using PoliceDepartment.Core.Entities;
 
 namespace PoliceDepartment.Infrastructure.DAL;
@@ -7,7 +8,7 @@ internal static class PoliceDepartmentDbSeeder
 {
     internal static void Seed(this ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<PoliceOfficer>().HasData(new List<PoliceOfficer>()
+        var policeOfficers = new List<PoliceOfficer>
         {
             new(Guid.NewGuid(), "Bobson", "Dugnutt", new DateOnly(1995, 1, 18), "#-123-436-534"),
             new(Guid.NewGuid(), "Sleve", "McDeichel", new DateOnly(1985, 12, 13), "#-123-392-166"),
@@ -19,6 +20,16 @@ internal static class PoliceDepartmentDbSeeder
             new(Guid.NewGuid(), "Willie", "Dustice", new DateOnly(1973, 5, 11), "#-454-443-541"),
             new(Guid.NewGuid(), "Mario", "McRwlain", new DateOnly(1995, 6, 18), "#-405-341-807"),
             new(Guid.NewGuid(), "Todd", "Bonzalez", new DateOnly(1956, 7, 18), "#-569-541-836"),
-        });
+        };
+        
+        var groupOne = new HashSet<PoliceOfficer>();
+        groupOne.UnionWith(policeOfficers.GetRange(0, 3));
+
+        var groupTwo = new HashSet<PoliceOfficer>();
+        groupOne.UnionWith(policeOfficers.GetRange(4, 8));
+        
+        modelBuilder.Entity<PoliceOfficer>().HasData();
+        
+        
     }
 }
