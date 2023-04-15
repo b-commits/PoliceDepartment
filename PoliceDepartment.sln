@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliceDepartment.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliceDepartment.Application", "PoliceDepartment.Application\PoliceDepartment.Application.csproj", "{A87A7D63-68AD-4DB0-8DD6-F113A02B9DB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliceDepartment.Test", "PoliceDepartment.Test\PoliceDepartment.Test.csproj", "{AF5069B6-0CB2-4202-A30A-981A86580DAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliceDepartment.Test", "PoliceDepartment.Test\PoliceDepartment.Test.csproj", "{427B6243-0DB4-4400-8DF3-EAB56DF95C48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +32,9 @@ Global
 		{A87A7D63-68AD-4DB0-8DD6-F113A02B9DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A87A7D63-68AD-4DB0-8DD6-F113A02B9DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A87A7D63-68AD-4DB0-8DD6-F113A02B9DB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF5069B6-0CB2-4202-A30A-981A86580DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF5069B6-0CB2-4202-A30A-981A86580DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF5069B6-0CB2-4202-A30A-981A86580DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF5069B6-0CB2-4202-A30A-981A86580DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427B6243-0DB4-4400-8DF3-EAB56DF95C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427B6243-0DB4-4400-8DF3-EAB56DF95C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427B6243-0DB4-4400-8DF3-EAB56DF95C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427B6243-0DB4-4400-8DF3-EAB56DF95C48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
