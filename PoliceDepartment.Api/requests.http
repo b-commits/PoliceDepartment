@@ -1,0 +1,5 @@
+###
+POST https://localhost:5000/OperationalGroups
+
+###
+GET https://localhost:5000/PoliceOfficers

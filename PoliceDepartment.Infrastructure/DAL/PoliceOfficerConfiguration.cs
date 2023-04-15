@@ -9,6 +9,7 @@ internal sealed class PoliceOfficerConfiguration : IEntityTypeConfiguration<Poli
 {
     public void Configure(EntityTypeBuilder<PoliceOfficer> builder)
     {
+        
         builder.HasKey(x => x.Id);
         builder.Property(x => x.BadgeNumber)
             .HasConversion(x => x.Value,

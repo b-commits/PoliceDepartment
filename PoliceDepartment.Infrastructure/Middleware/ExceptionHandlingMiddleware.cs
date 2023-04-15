@@ -7,21 +7,21 @@ namespace PoliceDepartment.Infrastructure.Middleware;
 
 public sealed class ErrorHandlingMiddleware
 {
-    private readonly RequestDelegate _next;
-    private readonly IWebHostEnvironment _webHostEnvironment;
+    private readonly RequestDelegate next;
+    private readonly IWebHostEnvironment webHostEnvironment;
 
     public ErrorHandlingMiddleware(RequestDelegate next, 
         IWebHostEnvironment webHostEnvironment)
     {
-        _next = next;
-        _webHostEnvironment = webHostEnvironment;
+        this.next = next;
+        this.webHostEnvironment = webHostEnvironment;
     }
 
     public async Task Invoke(HttpContext context)
     {
         try
         {
-            await _next.Invoke(context);
+            await next.Invoke(context);
         }
         catch (Exception exception)
         {
@@ -36,7 +36,7 @@ public sealed class ErrorHandlingMiddleware
             BasePoliceDepartmentException => (StatusCodes.Status400BadRequest, exception.Message, 
                 exception.GetType().Name.Replace("Exception", string.Empty)),
             _ => (StatusCodes.Status500InternalServerError, 
-                _webHostEnvironment.IsDevelopment() ? exception.Message : "An error occurred.", 
+                webHostEnvironment.IsDevelopment() ? exception.Message : "An error occurred.", 
                 nameof(exception))
         };
 
