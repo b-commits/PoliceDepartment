@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using PoliceDepartment.Application.Commands;
@@ -6,6 +7,7 @@ using PoliceDepartment.Core.Repositories;
 
 namespace PoliceDepartment.Application.Handlers;
 
+[UsedImplicitly]
 internal sealed class CreatePoliceOfficerCommandHandler : IRequestHandler<CreatePoliceOfficerCommand, PoliceOfficer>
 {
     private readonly IPoliceOfficerRepository repository;
@@ -23,10 +25,10 @@ internal sealed class CreatePoliceOfficerCommandHandler : IRequestHandler<Create
         var policeOfficer = new PoliceOfficer(request.Id, request.FirstName, request.LastName, request.BirthDate,
             request.BadgeNumber);
 
-        var officer = await repository.Add(policeOfficer);
+        await repository.AddAsync(policeOfficer);
 
         logger.LogInformation("Police officer {id} has been added", request.Id);
 
-        return officer;
+        return policeOfficer;
     }
 }

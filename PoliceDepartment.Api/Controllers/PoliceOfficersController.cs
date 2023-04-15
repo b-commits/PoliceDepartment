@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using PoliceDepartment.Application.Commands;
 using PoliceDepartment.Application.Services;
 using PoliceDepartment.Core.Entities;
@@ -9,34 +10,37 @@ namespace PoliceDepartment.Api.Controllers;
 [Route("[controller]")]
 public sealed class PoliceOfficersController : ControllerBase
 {
-    private readonly IPoliceOfficerService _policeOfficersService;
-    private readonly IMediator _mediator;
+    private readonly IPoliceOfficerService policeOfficersService;
+    private readonly IMediator mediator;
 
-    public PoliceOfficersController(IPoliceOfficerService policeOfficersService)
+    public PoliceOfficersController(
+        IPoliceOfficerService policeOfficersService, 
+        IMediator mediator)
     {
-        _policeOfficersService = policeOfficersService;
+        this.policeOfficersService = policeOfficersService;
+        this.mediator = mediator;
     }
     
     [HttpGet]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get() =>
-         Ok(await _policeOfficersService.GetAllAsync());
+         Ok(await policeOfficersService.GetAllAsync());
 
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<PoliceOfficer>> Get(Guid id) 
-        => Ok(await _policeOfficersService.GetByGuidAsync(id));
+        => Ok(await policeOfficersService.GetByGuidAsync(id));
 
     [HttpDelete("{id:guid}")]
     public async Task<ActionResult> Delete(Guid id)
     {
-        await _policeOfficersService.RemoveAsync(new DeletePoliceOfficerCommand(id));
+        await policeOfficersService.RemoveAsync(new DeletePoliceOfficerCommand(id));
         return NoContent();
     }
 
     [HttpPost]
     public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command)
-        => CreatedAtAction(nameof(Get), await _mediator.Send(command));
+        => CreatedAtAction(nameof(Get), await mediator.Send(command));
 
     [HttpPut("{id:guid}")]
     public async Task<ActionResult> Put(PoliceOfficer policeOfficer, Guid id) 
-        => Ok(await _policeOfficersService.Update(policeOfficer, id));
+        => Ok(await policeOfficersService.Update(policeOfficer, id));
 }

@@ -7,8 +7,7 @@ namespace PoliceDepartment.Infrastructure.DAL;
 public class PoliceDepartmentDbContext : DbContext
 {
     public DbSet<PoliceOfficer> PoliceOfficers { get; set; }
-    public DbSet<OperationalGroup> OperationalGroups { get; set; }
-    
+
     public PoliceDepartmentDbContext(DbContextOptions<PoliceDepartmentDbContext> dbContextOptions) 
         : base(dbContextOptions) 
     {
@@ -26,7 +25,7 @@ public class PoliceDepartmentDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        const string connectionString = "Server=localhost;Database=dev_police_department;Uid=root;Pwd=root;";
+        const string connectionString = "Server=localhost;Database=dev_police_department;Uid=user;Pwd=password;";
         optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
     }
 }
