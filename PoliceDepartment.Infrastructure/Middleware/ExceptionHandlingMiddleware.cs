@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using PoliceDepartment.Core.Exceptions;
 
 namespace PoliceDepartment.Infrastructure.Middleware;
@@ -9,12 +10,16 @@ public sealed class ErrorHandlingMiddleware
 {
     private readonly RequestDelegate next;
     private readonly IWebHostEnvironment webHostEnvironment;
+    private readonly ILogger<ErrorHandlingMiddleware> logger;
 
-    public ErrorHandlingMiddleware(RequestDelegate next, 
-        IWebHostEnvironment webHostEnvironment)
+    public ErrorHandlingMiddleware(
+        RequestDelegate next,
+        IWebHostEnvironment webHostEnvironment,
+        ILogger<ErrorHandlingMiddleware> logger)
     {
         this.next = next;
         this.webHostEnvironment = webHostEnvironment;
+        this.logger = logger;
     }
 
     public async Task Invoke(HttpContext context)
@@ -25,6 +30,7 @@ public sealed class ErrorHandlingMiddleware
         }
         catch (Exception exception)
         {
+            logger.LogError(exception.StackTrace);
             await HandleExceptionAsync(context, exception);
         }
     }
@@ -39,6 +45,9 @@ public sealed class ErrorHandlingMiddleware
                 webHostEnvironment.IsDevelopment() ? exception.Message : "An error occurred.", 
                 nameof(exception))
         };
+        
+        if (webHostEnvironment.IsDevelopment())
+            logger.LogError(exception.StackTrace);
 
         context.Response.StatusCode = statusCode;
         await context.Response.WriteAsJsonAsync(new { Exception = exceptionThrown, Message = message });

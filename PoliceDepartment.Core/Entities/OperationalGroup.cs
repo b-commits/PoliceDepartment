@@ -30,12 +30,12 @@ public class OperationalGroup
 
     internal void Disband()
     {
-        if (OperationalGroupStatus is not OperationalGroupStatus.Disbanded)
-        {
-            OperationalGroupStatus = OperationalGroupStatus.Disbanded;
-            DateDisbanded = DateTime.Today;
-            PoliceOfficers.Clear();
-        }
+        if (OperationalGroupStatus is OperationalGroupStatus.Disbanded) 
+            return;
+        
+        OperationalGroupStatus = OperationalGroupStatus.Disbanded;
+        DateDisbanded = DateTime.Today;
+        PoliceOfficers.Clear();
     }
 
     internal void AddPoliceOfficer(PoliceOfficer policeOfficer)

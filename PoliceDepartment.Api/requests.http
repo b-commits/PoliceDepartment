@@ -1,5 +1,13 @@
 ###
-POST https://localhost:5000/OperationalGroups
+POST https://localhost:5000/PoliceOfficers
+Content-Type: application/json
+
+{
+  "FirstName": "Michail",
+  "LastName": "Mantinband",
+  "BadgeNumber": "#-123-123-123",
+  "BirthDate": "19/03/1985"
+}
 
 ###
 GET https://localhost:5000/PoliceOfficers

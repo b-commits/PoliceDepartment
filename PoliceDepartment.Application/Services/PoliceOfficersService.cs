@@ -14,7 +14,11 @@ public class PoliceOfficersService : IPoliceOfficerService
         _policeOfficerRepository = policeOfficerRepository;
     }
 
-    public Task<IEnumerable<PoliceOfficer>> GetAllAsync() => _policeOfficerRepository.GetAllAsync();
+    public Task<IEnumerable<PoliceOfficer>> GetAllAsync()
+    {
+        _policeOfficerRepository.GetAllAsync();
+        throw new SystemException();
+    }
 
     public async Task<PoliceOfficer> GetByGuidAsync(Guid id)
     {
