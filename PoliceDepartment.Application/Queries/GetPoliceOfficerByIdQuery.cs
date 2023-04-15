@@ -1,3 +1,3 @@
 ﻿namespace PoliceDepartment.Application.Queries;
 
-public record GetPoliceOfficerByIdQuery();
+public sealed record GetPoliceOfficerByIdQuery(Guid Id);

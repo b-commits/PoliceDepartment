@@ -1,3 +1,5 @@
-﻿namespace PoliceDepartment.Application.Commands;
+﻿using MediatR;
 
-public record DeletePoliceOfficerCommand(Guid Id);
+namespace PoliceDepartment.Application.Commands;
+
+public record DeletePoliceOfficerCommand(Guid Id) : IRequest;

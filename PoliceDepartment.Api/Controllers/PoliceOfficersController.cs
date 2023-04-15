@@ -10,12 +10,13 @@ namespace PoliceDepartment.Api.Controllers;
 public sealed class PoliceOfficersController : ControllerBase
 {
     private readonly IPoliceOfficerService _policeOfficersService;
+    private readonly IMediator _mediator;
 
     public PoliceOfficersController(IPoliceOfficerService policeOfficersService)
     {
         _policeOfficersService = policeOfficersService;
     }
-
+    
     [HttpGet]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get() =>
          Ok(await _policeOfficersService.GetAllAsync());
@@ -33,7 +34,7 @@ public sealed class PoliceOfficersController : ControllerBase
 
     [HttpPost]
     public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command)
-        => CreatedAtAction(nameof(Get), new { Id = await _policeOfficersService.AddAsync(command) });
+        => CreatedAtAction(nameof(Get), await _mediator.Send(command));
 
     [HttpPut("{id:guid}")]
     public async Task<ActionResult> Put(PoliceOfficer policeOfficer, Guid id) 

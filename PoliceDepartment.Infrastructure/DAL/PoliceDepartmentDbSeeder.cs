@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using PoliceDepartment.Core.Entities;
 
 namespace PoliceDepartment.Infrastructure.DAL;

@@ -1,6 +1,12 @@
-﻿using PoliceDepartment.Core.ValueObjects;
+﻿using MediatR;
+using PoliceDepartment.Core.Entities;
+using PoliceDepartment.Core.ValueObjects;
 
 namespace PoliceDepartment.Application.Commands;
 
-public record CreatePoliceOfficerCommand(string FirstName, string LastName,
-    BadgeNumber BadgeNumber, BirthDate BirthDate, Guid Id = new());
+public sealed record CreatePoliceOfficerCommand(
+    string FirstName, 
+    string LastName, 
+    BadgeNumber BadgeNumber, 
+    BirthDate BirthDate, 
+    Guid Id = new()) : IRequest<PoliceOfficer>;
