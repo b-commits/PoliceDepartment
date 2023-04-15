@@ -3,10 +3,14 @@ POST https://localhost:5000/PoliceOfficers
 Content-Type: application/json
 
 {
-  "FirstName": "Michail",
+  "FirstName": "Amichai",
   "LastName": "Mantinband",
-  "BadgeNumber": "#-123-123-123",
-  "BirthDate": "19/03/1985"
+  "BadgeNumber": {
+    "Value": "#-123-123-123"
+  },
+  "BirthDate": {
+    "Value": "1990-02-01" 
+  }
 }
 
 ###

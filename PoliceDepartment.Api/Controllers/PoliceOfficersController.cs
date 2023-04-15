@@ -24,8 +24,6 @@ public sealed class PoliceOfficersController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get()
     {
-        Console.WriteLine("Hello!!!");
-        throw new SystemException();
         return Ok(await policeOfficersService.GetAllAsync());
     }
        
@@ -42,12 +40,9 @@ public sealed class PoliceOfficersController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command)
-    {
-        var model = ModelState;
-        return CreatedAtAction(nameof(Get), await mediator.Send(command));
-    }
-   
+    public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command) => 
+         CreatedAtAction(nameof(Get), await mediator.Send(command));
+    
 
     [HttpPut("{id:guid}")]
     public async Task<ActionResult> Put(PoliceOfficer policeOfficer, Guid id) 

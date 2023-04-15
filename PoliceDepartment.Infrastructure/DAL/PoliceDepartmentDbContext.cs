@@ -35,7 +35,6 @@ public class PoliceDepartmentDbContext : DbContext
     {
         modelBuilder.Entity<PoliceOfficer>().ToTable("PoliceOfficer");
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
-        modelBuilder.Seed();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
