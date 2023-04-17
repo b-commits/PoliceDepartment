@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\PoliceDepartment.Application\PoliceDepartment.Application.csproj" />
       <ProjectReference Include="..\PoliceDepartment.Core\PoliceDepartment.Core.csproj" />
     </ItemGroup>
 

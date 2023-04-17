@@ -6,3 +6,7 @@
 6. Do EF trzeba mieć default constructor
 7. Kestrel jest lpeszy od ISS, bo zoptymalizowany pod webaplikacje. NET Core domyslnie uzywa teraz Kestrela, wiec
 mozna wywalic ISS z konfiguracji.
+8. Klasa static nie moze byc sealed. 
+9. DTO to po prostu ograniczona reprezentacja obiektu, ktora zawiera tylko to, co potrzebujemy.
+Mozemy albo uzywac DTOsa albo komendy.
+
