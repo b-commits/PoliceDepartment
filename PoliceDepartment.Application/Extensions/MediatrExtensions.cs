@@ -6,7 +6,7 @@ public static class MediatrExtensions
 {
     public static void AddMediator(this IServiceCollection services)
     {
-        services.AddMediatR(cfg 
-            => cfg.RegisterServicesFromAssembly(typeof(MediatrExtensions).Assembly));
+        services.AddMediatR(configuration 
+            => configuration.RegisterServicesFromAssembly(typeof(MediatrExtensions).Assembly));
     }
 }

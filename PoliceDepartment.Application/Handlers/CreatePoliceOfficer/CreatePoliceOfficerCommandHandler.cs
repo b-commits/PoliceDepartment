@@ -1,11 +1,10 @@
 using JetBrains.Annotations;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using PoliceDepartment.Application.Commands;
 using PoliceDepartment.Core.Entities;
 using PoliceDepartment.Core.Repositories;
 
-namespace PoliceDepartment.Application.Handlers;
+namespace PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
 
 [UsedImplicitly]
 internal sealed class CreatePoliceOfficerCommandHandler : IRequestHandler<CreatePoliceOfficerCommand, PoliceOfficer>

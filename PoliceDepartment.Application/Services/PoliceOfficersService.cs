@@ -1,5 +1,6 @@
-﻿using PoliceDepartment.Application.Commands;
-using PoliceDepartment.Application.Exceptions;
+﻿using PoliceDepartment.Application.Exceptions;
+using PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
+using PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
 using PoliceDepartment.Core.Entities;
 using PoliceDepartment.Core.Repositories;
 
@@ -41,7 +42,7 @@ public class PoliceOfficersService : IPoliceOfficerService
             throw new OfficerNotFoundException(command.Id);
         }
         
-        await _policeOfficerRepository.RemoveAsync(officer);
+        await _policeOfficerRepository.RemoveAsync(officer.Id);
     }
 
     public async Task<Guid> AddAsync(CreatePoliceOfficerCommand policeOfficer)

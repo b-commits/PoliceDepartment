@@ -2,7 +2,7 @@
 using PoliceDepartment.Core.Entities;
 using PoliceDepartment.Core.ValueObjects;
 
-namespace PoliceDepartment.Application.Commands;
+namespace PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
 
 public sealed record CreatePoliceOfficerCommand(
     string FirstName, 

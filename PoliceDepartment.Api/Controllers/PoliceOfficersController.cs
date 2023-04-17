@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using PoliceDepartment.Application.Commands;
+using PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
+using PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
 using PoliceDepartment.Application.Services;
 using PoliceDepartment.Core.Entities;
 

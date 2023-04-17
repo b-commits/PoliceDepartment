@@ -31,9 +31,15 @@ public sealed class MySqlPoliceOfficerRepository : IPoliceOfficerRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task RemoveAsync(PoliceOfficer policeOfficer)
+    public async Task RemoveAsync(Guid id)
     {
-        _dbContext.PoliceOfficers.Remove(policeOfficer);
+        var policeOfficer = await GetByGuidAsync(id);
+
+        if (policeOfficer != null)
+        {
+            _dbContext.PoliceOfficers?.Remove(policeOfficer);
+        } 
+        
         await _dbContext.SaveChangesAsync();
     }
 
