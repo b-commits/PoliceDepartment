@@ -18,5 +18,5 @@ public sealed class OperationalGroupsController : ControllerBase
 
 public class OperationalGroup
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 }

@@ -17,8 +17,7 @@ public class PoliceOfficersService : IPoliceOfficerService
 
     public Task<IEnumerable<PoliceOfficer>> GetAllAsync()
     {
-        _policeOfficerRepository.GetAllAsync();
-        throw new SystemException();
+        return _policeOfficerRepository.GetAllAsync();
     }
 
     public async Task<PoliceOfficer> GetByGuidAsync(Guid id)
@@ -26,9 +25,7 @@ public class PoliceOfficersService : IPoliceOfficerService
         var officer = await _policeOfficerRepository.GetByGuidAsync(id);
         
         if (officer is null)
-        {
             throw new OfficerNotFoundException(id);
-        }
 
         return officer;
     }
@@ -38,9 +35,7 @@ public class PoliceOfficersService : IPoliceOfficerService
         var officer = await _policeOfficerRepository.GetByGuidAsync(command.Id);
         
         if (officer is null)
-        {
             throw new OfficerNotFoundException(command.Id);
-        }
         
         await _policeOfficerRepository.RemoveAsync(officer.Id);
     }
@@ -50,9 +45,7 @@ public class PoliceOfficersService : IPoliceOfficerService
         var existingOfficer = await _policeOfficerRepository.GetByBadgeNumberAsync(policeOfficer.BadgeNumber);
         
         if (existingOfficer is not null)
-        {
             throw new BadgeNumberAlreadyRegistered(policeOfficer.BadgeNumber.Value);
-        }
 
         var newOfficer = new PoliceOfficer(policeOfficer.Id, policeOfficer.FirstName, policeOfficer.LastName,
             policeOfficer.BirthDate, policeOfficer.BadgeNumber);
@@ -67,10 +60,8 @@ public class PoliceOfficersService : IPoliceOfficerService
         var existingOfficer = await _policeOfficerRepository.GetByGuidAsync(id);
         
         if (existingOfficer is null)
-        {
             throw new OfficerNotFoundException(policeOfficer.Id);
-        }
-
+        
         existingOfficer.BadgeNumber.Value = policeOfficer.BadgeNumber.Value;
         return true;
     }

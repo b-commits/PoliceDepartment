@@ -15,3 +15,128 @@ Content-Type: application/json
 
 ###
 GET https://localhost:5000/PoliceOfficers
+Content-Type: application/json
+
+[
+  {
+    "id": "08db3de8-d5dc-4af5-82dc-86824ea54111",
+    "firstName": "Michail",
+    "lastName": "Mantinband",
+    "badgeNumber": {
+      "value": "#-123-123-123"
+    },
+    "birthDate": {
+      "value": "1993-03-03"
+    }
+  },
+  {
+    "id": "0c51a7c4-e1b1-4c76-8613-e4d052c6ef8b",
+    "firstName": "Willie",
+    "lastName": "Dustice",
+    "badgeNumber": {
+      "value": "#-454-443-541"
+    },
+    "birthDate": {
+      "value": "1973-05-11"
+    }
+  },
+  {
+    "id": "26fe312c-32ae-47f4-a6a1-554ccb68bdd7",
+    "firstName": "Rawl",
+    "lastName": "Chamgerlain",
+    "badgeNumber": {
+      "value": "#-766-655-594"
+    },
+    "birthDate": {
+      "value": "1968-11-26"
+    }
+  },
+  {
+    "id": "32c75a28-ef4e-4b5f-972a-4a5aa057d985",
+    "firstName": "Tony",
+    "lastName": "Smherik",
+    "badgeNumber": {
+      "value": "#-569-450-729"
+    },
+    "birthDate": {
+      "value": "1982-03-03"
+    }
+  },
+  {
+    "id": "48720644-6130-4744-81ed-1528d01cd617",
+    "firstName": "Kevin",
+    "lastName": "Nogilny",
+    "badgeNumber": {
+      "value": "#-778-988-363"
+    },
+    "birthDate": {
+      "value": "1986-01-21"
+    }
+  },
+  {
+    "id": "50e4dc59-b8b4-4500-a81c-27f95c64af17",
+    "firstName": "Todd",
+    "lastName": "Bonzalez",
+    "badgeNumber": {
+      "value": "#-569-541-836"
+    },
+    "birthDate": {
+      "value": "1956-07-18"
+    }
+  },
+  {
+    "id": "6f0e19ee-8c7c-4624-af7c-7c6eed8cea05",
+    "firstName": "Rey",
+    "lastName": "McSriff",
+    "badgeNumber": {
+      "value": "#-232-767-666"
+    },
+    "birthDate": {
+      "value": "1965-06-23"
+    }
+  },
+  {
+    "id": "76f47e29-60ed-469c-9336-64623ef5f2f0",
+    "firstName": "Glenallen",
+    "lastName": "Mixon",
+    "badgeNumber": {
+      "value": "#-896-921-338"
+    },
+    "birthDate": {
+      "value": "1975-08-24"
+    }
+  },
+  {
+    "id": "7d0ee9be-bdd7-462d-8152-0e1f2d887b2c",
+    "firstName": "Sleve",
+    "lastName": "McDeichel",
+    "badgeNumber": {
+      "value": "#-123-392-166"
+    },
+    "birthDate": {
+      "value": "1985-12-13"
+    }
+  },
+  {
+    "id": "97d09b2b-263c-4f2e-9559-a3332e8e50d8",
+    "firstName": "Mario",
+    "lastName": "McRwlain",
+    "badgeNumber": {
+      "value": "#-405-341-807"
+    },
+    "birthDate": {
+      "value": "1995-06-18"
+    }
+  },
+  {
+    "id": "d0b6cd5c-6547-48f8-bd6c-50d2d48f7ed9",
+    "firstName": "Bobson",
+    "lastName": "Dugnutt",
+    "badgeNumber": {
+      "value": "#-123-436-534"
+    },
+    "birthDate": {
+      "value": "1995-01-18"
+    }
+  }
+]

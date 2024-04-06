@@ -48,13 +48,11 @@ public class OperationalGroup
         PoliceOfficers.Add(policeOfficer);
     }
 
-    internal void RemovePoliceOfficer(Guid policeOfficerId)
-    {
+    internal void RemovePoliceOfficer(Guid policeOfficerId) => 
         PoliceOfficers.RemoveWhere(policeOfficer => policeOfficer.Id == policeOfficerId);
-    }
+    
 
-    public override string ToString()
-        => $"[{Id}] Operational group {OperationalGroupName}, " +
-           $"number of members: {PoliceOfficers.Count}, status: {OperationalGroupStatus}";
-
+    public override string ToString() => 
+        @$"[{Id}] Operational group {OperationalGroupName}, 
+        number of members: {PoliceOfficers.Count}, status: {OperationalGroupStatus}";
 }

@@ -1,0 +1,33 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=246123fd_002Dc559_002D4167_002D9403_002D6c0d3ecc4d20/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;PoliceDepartment.Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Or&gt;
+    &lt;Project Location="/Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Test" Presentation="&amp;lt;PoliceDepartment.Test&amp;gt;" /&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;xUnit::59C2AA27-2E6B-4D8D-8572-DAC2BA583B14::net7.0::PoliceDepartment.IntegrationTest.Controllers.PoliceOfficerControllerTests.Get_ShouldReturnAllPoliceOfficersHttp200&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4ce655e5_002D99c7_002D4379_002Dbb88_002Deb1634f240c7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Out_Parameters" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::427B6243-0DB4-4400-8DF3-EAB56DF95C48::net7.0::PoliceDepartment.Test.Services.PoliceOfficersServiceTests.Out_Parameters&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6a112115_002Dc333_002D481d_002D9c46_002D91ffa219a0bb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Enum_Behaviors" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::427B6243-0DB4-4400-8DF3-EAB56DF95C48::net7.0::PoliceDepartment.Test.Services.PoliceOfficersServiceTests.Enum_Behaviors&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6e9cd233_002De90f_002D42b5_002D9f5c_002D0918035b54b6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Get_ShouldReturnAllPoliceOfficersHttp200" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::59C2AA27-2E6B-4D8D-8572-DAC2BA583B14::net7.0::PoliceDepartment.IntegrationTest.Controllers.PoliceOfficerControllerTests.Get_ShouldReturnAllPoliceOfficersHttp200&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::427B6243-0DB4-4400-8DF3-EAB56DF95C48::net7.0::PoliceDepartment.Test.Services.PoliceOfficersServiceTests.Enum_Behaviors&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=830ec1ee_002Da66b_002D477b_002D8167_002D4c9becc78b75/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Enum_Behaviors #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::427B6243-0DB4-4400-8DF3-EAB56DF95C48::net7.0::PoliceDepartment.Test.Services.PoliceOfficersServiceTests.Enum_Behaviors&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::427B6243-0DB4-4400-8DF3-EAB56DF95C48::net7.0::PoliceDepartment.Test.Services.PoliceOfficersServiceTests.Out_Parameters&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Schmeichal/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Timotee/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

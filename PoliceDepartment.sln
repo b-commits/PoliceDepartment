@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliceDepartment.Applicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliceDepartment.Test", "PoliceDepartment.Test\PoliceDepartment.Test.csproj", "{427B6243-0DB4-4400-8DF3-EAB56DF95C48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliceDepartment.IntegrationTest", "PoliceDepartment.IntegrationTest\PoliceDepartment.IntegrationTest.csproj", "{59C2AA27-2E6B-4D8D-8572-DAC2BA583B14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{427B6243-0DB4-4400-8DF3-EAB56DF95C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{427B6243-0DB4-4400-8DF3-EAB56DF95C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{427B6243-0DB4-4400-8DF3-EAB56DF95C48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C2AA27-2E6B-4D8D-8572-DAC2BA583B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C2AA27-2E6B-4D8D-8572-DAC2BA583B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C2AA27-2E6B-4D8D-8572-DAC2BA583B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C2AA27-2E6B-4D8D-8572-DAC2BA583B14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
