@@ -6,15 +6,8 @@ namespace PoliceDepartment.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public sealed class UsersController : ControllerBase
+public sealed class UsersController(IMediator mediator) : ControllerBase
 {
-    private readonly IMediator mediator;
-
-    public UsersController(IMediator mediator)
-    {
-        this.mediator = mediator;
-    }
-
     public async Task<ActionResult> Post(SignUpCommand command)
     {
         await mediator.Send(command);

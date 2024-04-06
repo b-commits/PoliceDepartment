@@ -6,19 +6,11 @@ using PoliceDepartment.Core.Repositories;
 namespace PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
 
 [UsedImplicitly]
-internal sealed class DeletePoliceOfficerCommandHandler : IRequestHandler<DeletePoliceOfficerCommand>
+internal sealed class DeletePoliceOfficerCommandHandler(
+    IPoliceOfficerRepository policeOfficerRepository,
+    ILogger<DeletePoliceOfficerCommandHandler> logger)
+    : IRequestHandler<DeletePoliceOfficerCommand>
 {
-    private readonly IPoliceOfficerRepository policeOfficerRepository;
-    private readonly ILogger<DeletePoliceOfficerCommandHandler> logger;
-
-    public DeletePoliceOfficerCommandHandler(
-        IPoliceOfficerRepository policeOfficerRepository,
-        ILogger<DeletePoliceOfficerCommandHandler> logger)
-    {
-        this.policeOfficerRepository = policeOfficerRepository;
-        this.logger = logger;
-    }
-
     public async Task Handle(DeletePoliceOfficerCommand request, CancellationToken cancellationToken)
     {
         await policeOfficerRepository.RemoveAsync(request.Id);

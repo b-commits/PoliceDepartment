@@ -7,18 +7,11 @@ using PoliceDepartment.Core.Repositories;
 namespace PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
 
 [UsedImplicitly]
-internal sealed class CreatePoliceOfficerCommandHandler : IRequestHandler<CreatePoliceOfficerCommand, PoliceOfficer>
+internal sealed class CreatePoliceOfficerCommandHandler(
+    IPoliceOfficerRepository repository,
+    ILogger<IPoliceOfficerRepository> logger)
+    : IRequestHandler<CreatePoliceOfficerCommand, PoliceOfficer>
 {
-    private readonly IPoliceOfficerRepository repository;
-    private readonly ILogger<IPoliceOfficerRepository> logger;
-
-    public CreatePoliceOfficerCommandHandler(IPoliceOfficerRepository repository, 
-        ILogger<IPoliceOfficerRepository> logger)
-    {
-        this.repository = repository;
-        this.logger = logger;
-    }
-
     public async Task<PoliceOfficer> Handle(CreatePoliceOfficerCommand request, CancellationToken cancellationToken)
     {
         var policeOfficer = new PoliceOfficer(request.Id, request.FirstName, request.LastName, request.BirthDate,

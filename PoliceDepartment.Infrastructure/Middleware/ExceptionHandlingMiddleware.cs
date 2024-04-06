@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
@@ -8,19 +7,11 @@ using PoliceDepartment.Core.Exceptions;
 
 namespace PoliceDepartment.Infrastructure.Middleware;
 
-public sealed class GlobalExceptionHandler : IExceptionHandler
+public sealed class GlobalExceptionHandler(
+    IHostEnvironment webHostEnvironment,
+    ILogger<GlobalExceptionHandler> logger)
+    : IExceptionHandler
 {
-    private readonly IWebHostEnvironment webHostEnvironment;
-    private readonly ILogger<GlobalExceptionHandler> logger;
-
-    public GlobalExceptionHandler(
-        IWebHostEnvironment webHostEnvironment,
-        ILogger<GlobalExceptionHandler> logger)
-    {
-        this.webHostEnvironment = webHostEnvironment;
-        this.logger = logger;
-    }
-    
     public async ValueTask<bool> TryHandleAsync(
         HttpContext httpContext, 
         Exception exception, 

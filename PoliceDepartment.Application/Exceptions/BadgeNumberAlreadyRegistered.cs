@@ -2,10 +2,5 @@
 
 namespace PoliceDepartment.Application.Exceptions;
 
-public class BadgeNumberAlreadyRegistered : BasePoliceDepartmentException
-{
-    public BadgeNumberAlreadyRegistered(string badgeNumber) : 
-        base($"Badge number '{badgeNumber}' is already registered.")
-    {
-    }
-}
+public class BadgeNumberAlreadyRegistered(string badgeNumber)
+    : BasePoliceDepartmentException($"Badge number '{badgeNumber}' is already registered.");

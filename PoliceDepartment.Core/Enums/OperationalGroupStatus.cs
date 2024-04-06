@@ -1,4 +1,4 @@
-﻿namespace PoliceDepartment.Core.Entities;
+﻿namespace PoliceDepartment.Core.Enums;
 
 public enum OperationalGroupStatus
 {

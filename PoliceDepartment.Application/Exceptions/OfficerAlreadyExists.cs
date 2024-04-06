@@ -2,10 +2,4 @@
 
 namespace PoliceDepartment.Application.Exceptions;
 
-public class OfficerAlreadyExists : BasePoliceDepartmentException
-{
-    public OfficerAlreadyExists(Guid id) : 
-        base($"Officer with id '{id}' already exists.")
-    {
-    }
-}
+public class OfficerAlreadyExists(Guid id) : BasePoliceDepartmentException($"Officer with id '{id}' already exists.");

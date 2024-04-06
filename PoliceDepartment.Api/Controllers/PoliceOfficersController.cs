@@ -9,23 +9,14 @@ namespace PoliceDepartment.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public sealed class PoliceOfficersController : ControllerBase
+public sealed class PoliceOfficersController(
+    IPoliceOfficerService policeOfficersService,
+    IMediator mediator)
+    : ControllerBase
 {
-    private readonly IPoliceOfficerService policeOfficersService;
-    private readonly IMediator mediator;
-
-    public PoliceOfficersController(
-        IPoliceOfficerService policeOfficersService,
-        IMediator mediator)
-    {
-        this.policeOfficersService = policeOfficersService;
-        this.mediator = mediator;
-    }
-
     [HttpGet]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get()
     {
-        throw new InvalidDataException();
         return Ok(await policeOfficersService.GetAllAsync());
     }
 

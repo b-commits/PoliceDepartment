@@ -2,10 +2,5 @@
 
 namespace PoliceDepartment.Application.Exceptions;
 
-public class OfficerNotFoundException : BasePoliceDepartmentException
-{
-    public OfficerNotFoundException(Guid id) : 
-        base($"Officer with id '{id}' does not exist.")
-    {
-    }
-}
+public class OfficerNotFoundException(Guid id)
+    : BasePoliceDepartmentException($"Officer with id '{id}' does not exist.");

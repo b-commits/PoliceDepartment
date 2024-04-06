@@ -12,7 +12,6 @@ public class PoliceDepartmentDbContext : DbContext
 {
     private readonly IConfiguration _configuration;
     private readonly ILogger<PoliceDepartmentDbContext> _logger;
-    private readonly IWebHostEnvironment _environment;
 
     public DbSet<PoliceOfficer>? PoliceOfficers { get; set; }
 
@@ -22,7 +21,6 @@ public class PoliceDepartmentDbContext : DbContext
         ILogger<PoliceDepartmentDbContext> logger, IWebHostEnvironment environment) 
         : base(dbContextOptions)
     {
-        _environment = environment;
         _configuration = configuration;
         _logger = logger;
     }
@@ -30,7 +28,6 @@ public class PoliceDepartmentDbContext : DbContext
     public PoliceDepartmentDbContext(IConfiguration configuration, 
         ILogger<PoliceDepartmentDbContext> logger, IWebHostEnvironment environment)
     {
-        _environment = environment;
         _configuration = configuration;
         _logger = logger;
     }

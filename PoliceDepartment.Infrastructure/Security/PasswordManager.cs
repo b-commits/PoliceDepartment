@@ -3,15 +3,8 @@ using PoliceDepartment.Application.Security;
 
 namespace PoliceDepartment.Infrastructure.Security;
 
-internal sealed class PasswordManager : IPasswordManager
+internal sealed class PasswordManager(IPasswordHasher<string> passwordHasher) : IPasswordManager
 {
-    private readonly IPasswordHasher<string> passwordHasher;
-
-    public PasswordManager(IPasswordHasher<string> passwordHasher)
-    {
-        this.passwordHasher = passwordHasher;
-    }
-    
     public string Secure(string password)
     {
         var hashedPassword = passwordHasher.HashPassword(default!, password);
