@@ -5,10 +5,12 @@ namespace PoliceDepartment.Core.ValueObjects;
 public sealed record BirthDate
 {
     public DateOnly Value { get; }
-    
+
+    private const int MinimalBirthYear = 1950;
+
     public BirthDate(DateOnly value)
     {
-        if (value.Year < 1950 || value.Year > DateOnly.MaxValue.Year - 20)
+        if (value.Year < MinimalBirthYear || value.Year > DateOnly.MaxValue.Year - 20)
         {
             throw new InvalidBirthDateException(value.Year);
         }

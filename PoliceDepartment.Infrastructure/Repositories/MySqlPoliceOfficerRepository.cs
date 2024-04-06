@@ -36,10 +36,11 @@ public sealed class MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbCon
         await dbContext.SaveChangesAsync();
     }
 
-    public async Task UpdateAsync(PoliceOfficer policeOfficer)
+    public async Task<PoliceOfficer> UpdateAsync(PoliceOfficer policeOfficer)
     {
-        dbContext.PoliceOfficers.Update(policeOfficer);
+        var newPoliceOfficer = dbContext.PoliceOfficers.Update(policeOfficer).Entity;
         await dbContext.SaveChangesAsync();
+        return newPoliceOfficer;
     }
 
 

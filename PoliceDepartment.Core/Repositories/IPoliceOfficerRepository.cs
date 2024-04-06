@@ -10,5 +10,5 @@ public interface IPoliceOfficerRepository
     Task<PoliceOfficer?> GetByBadgeNumberAsync(BadgeNumber badgeNumber);
     Task AddAsync(PoliceOfficer policeOfficer);
     Task RemoveAsync(Guid id);
-    Task UpdateAsync(PoliceOfficer policeOfficer);
+    Task<PoliceOfficer> UpdateAsync(PoliceOfficer policeOfficer);
 }
