@@ -16,6 +16,7 @@ public class PoliceDepartmentDbContext : DbContext
     private readonly ILogger<AuditableEntityInterceptor> _auditLogger;
 
     public DbSet<PoliceOfficer>? PoliceOfficers { get; init; }
+    public DbSet<User>? Users { get; init; }
 
     public PoliceDepartmentDbContext(
         DbContextOptions<PoliceDepartmentDbContext> dbContextOptions, 
@@ -40,6 +41,8 @@ public class PoliceDepartmentDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<PoliceOfficer>().ToTable("PoliceOfficer");
+        modelBuilder.Entity<User>().ToTable("User").Property(e => e.Role).HasColumnType("nvarchar(30)");
+        
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         modelBuilder.Seed();
     }

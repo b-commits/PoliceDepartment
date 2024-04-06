@@ -3,9 +3,12 @@ using PoliceDepartment.Core.Exceptions;
 
 namespace PoliceDepartment.Core.ValueObjects;
 
-public sealed record BadgeNumber
+public sealed partial record BadgeNumber
 {
     public string Value { get; set; }
+    
+    [GeneratedRegex("^#-[0-9]{3}-[0-9]{3}-[0-9]{3}$", RegexOptions.IgnoreCase | RegexOptions.Compiled, "en-PL")]
+    private static partial Regex MyRegex();
 
     public BadgeNumber(string value)
     {
@@ -18,12 +21,10 @@ public sealed record BadgeNumber
 
     private static bool HasCorrectBadgeFormat(string value)
     {
-        var badgeNumberFormat = new Regex("^#-[0-9]{3}-[0-9]{3}-[0-9]{3}$",
-            RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        var badgeNumberFormat = MyRegex();
         return badgeNumberFormat.IsMatch(value);
     }
     
     public static implicit operator BadgeNumber(string value)
         => new(value);
-    
 }

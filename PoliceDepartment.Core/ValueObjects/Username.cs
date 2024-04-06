@@ -4,7 +4,7 @@ namespace PoliceDepartment.Core.ValueObjects;
 
 public sealed record Username
 {
-    public string Name { get;  }
+    public string Name { get; set;  }
 
     private const int maxUserNameLength = 20;
 
@@ -21,5 +21,8 @@ public sealed record Username
         char[] illegalCharacters = ['-', '#', '$'];
         return name.ToCharArray().Any(c => illegalCharacters.Contains(c));
     }
+    
+    public static implicit operator Username(string value)
+        => new(value);
 
 }

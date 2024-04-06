@@ -11,5 +11,6 @@ public static class ServiceCollectionExtension
     {
         services.AddDbContext<PoliceDepartmentDbContext>();
         services.AddScoped<IPoliceOfficerRepository, MySqlPoliceOfficerRepository>();
+        services.AddScoped<IUserRepository, MySqlUserRepository>();
     }
 }

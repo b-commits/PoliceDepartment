@@ -17,8 +17,11 @@ internal sealed class SignUpCommandHandler(
     {
         var securedPassword = passwordManager.Secure(request.Password);
 
-        var user = new User(request.UserId, request.Email, securedPassword, 
-            request.Password, request.Role, timeProvider.GetUtcNow().Date);
+        var user = new User(request.UserId, 
+            request.Email, 
+            request.Username,
+            securedPassword,
+            request.Role);
         
         logger.LogInformation("Created user with email: '{email}'.", request.Email);
     }

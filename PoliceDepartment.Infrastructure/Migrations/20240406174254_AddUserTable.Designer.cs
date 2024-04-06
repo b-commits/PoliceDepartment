@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PoliceDepartment.Infrastructure.DAL;
 
@@ -11,9 +12,11 @@ using PoliceDepartment.Infrastructure.DAL;
 namespace PoliceDepartment.Infrastructure.Migrations
 {
     [DbContext(typeof(PoliceDepartmentDbContext))]
-    partial class PoliceDepartmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240406174254_AddUserTable")]
+    partial class AddUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,7 +59,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("41a9bf24-e6fd-485f-9f08-a9bdf0dece29"),
+                            Id = new Guid("9bf33505-5554-493a-ba92-50206e0d0e05"),
                             BadgeNumber = "#-123-436-534",
                             BirthDate = new DateTime(1995, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -66,7 +69,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d1d6b88b-d39e-4c6e-ae5a-5beddf6ba9d3"),
+                            Id = new Guid("7d68e63e-32d5-4dc4-ad34-5902e29142a0"),
                             BadgeNumber = "#-123-392-166",
                             BirthDate = new DateTime(1985, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -76,7 +79,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cb345f59-dfb0-4969-b9e0-514fc2296842"),
+                            Id = new Guid("8bdb23d3-ae1b-4ef2-8c77-27a83a02304a"),
                             BadgeNumber = "#-232-767-666",
                             BirthDate = new DateTime(1965, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -86,7 +89,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("98cf4f55-2571-4fa2-b3ec-a7689bba14ca"),
+                            Id = new Guid("e51d5552-6751-40e8-ae07-b98fe99f4275"),
                             BadgeNumber = "#-896-921-338",
                             BirthDate = new DateTime(1975, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -96,7 +99,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("089fd97d-3927-4b3b-a1b9-0303db7aab2e"),
+                            Id = new Guid("7c8625b5-c783-47e8-aa56-929b06142962"),
                             BadgeNumber = "#-766-655-594",
                             BirthDate = new DateTime(1968, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -106,7 +109,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("22ba7186-07f0-4c8e-b349-9ef4444746e5"),
+                            Id = new Guid("d0b3f4c8-0411-4169-a69a-37883ddda421"),
                             BadgeNumber = "#-778-988-363",
                             BirthDate = new DateTime(1986, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -116,7 +119,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("544c98a9-9cd9-4256-909f-8b5bf4d18cf0"),
+                            Id = new Guid("10344b85-1b85-4117-bd08-e1fa3e874650"),
                             BadgeNumber = "#-569-450-729",
                             BirthDate = new DateTime(1982, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -126,7 +129,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b859a6c9-542a-4ca5-acae-dd0e5e853d24"),
+                            Id = new Guid("8b267d27-9278-4704-b7c0-01f56c407bce"),
                             BadgeNumber = "#-454-443-541",
                             BirthDate = new DateTime(1973, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -136,7 +139,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("eead03ab-a818-4cda-86b4-afc9eef4ca7a"),
+                            Id = new Guid("11a3501f-3626-4dcf-acf9-b580d94c955f"),
                             BadgeNumber = "#-405-341-807",
                             BirthDate = new DateTime(1995, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -146,7 +149,7 @@ namespace PoliceDepartment.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f81aee23-a299-4cd8-bb0c-7266fd90709d"),
+                            Id = new Guid("e97de61e-74f5-4ea5-819f-4b4d3defd60a"),
                             BadgeNumber = "#-569-541-836",
                             BirthDate = new DateTime(1956, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -187,28 +190,6 @@ namespace PoliceDepartment.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("80c7fffa-3d45-4bd3-b96d-a0bce878e6cb"),
-                            Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
-                            Email = "admin@nypd.com",
-                            Modified = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
-                            Password = "aa3493434alpha9991111233435",
-                            Role = "Admin",
-                            Username = "admin"
-                        },
-                        new
-                        {
-                            Id = new Guid("80c7fffa-3d45-4bd3-b96d-a0bce878e6cd"),
-                            Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
-                            Email = "reviewer@nypd.com",
-                            Modified = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
-                            Password = "aa3493434beta9991111233435",
-                            Role = "Reviewer",
-                            Username = "reviewer"
-                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PoliceDepartment.Core.Entities;
+using PoliceDepartment.Core.Enums;
 
 namespace PoliceDepartment.Infrastructure.DAL;
 
@@ -31,6 +32,15 @@ internal static class PoliceDepartmentDbSeeder
                 new DateOnly(1956, 7, 18), "#-569-541-836"),
         };
 
+        var users = new List<User>
+        {
+            new(new Guid("80c7fffa-3d45-4bd3-b96d-a0bce878e6cb"),"admin@nypd.com", "admin", 
+                "aa3493434alpha9991111233435", UserRole.Admin),
+            new(new Guid("80c7fffa-3d45-4bd3-b96d-a0bce878e6cd"), "reviewer@nypd.com", "reviewer", 
+                "aa3493434beta9991111233435", UserRole.Reviewer)
+        };
+
+        modelBuilder.Entity<User>().HasData(users);
         modelBuilder.Entity<PoliceOfficer>().HasData(policeOfficers);
     }
 }
