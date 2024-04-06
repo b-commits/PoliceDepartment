@@ -4,7 +4,7 @@ using PoliceDepartment.Application.Security;
 
 namespace PoliceDepartment.Infrastructure.Security;
 
-internal static class Extensions
+public static class Extensions
 {
     public static IServiceCollection AddSecurity(this IServiceCollection services)
     {

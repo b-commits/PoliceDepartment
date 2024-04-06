@@ -1,7 +1,7 @@
 ﻿services:
   
   db:
-    container_name: mysql
+    container_name: pd-mysql
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
@@ -14,14 +14,14 @@
       - /Users/Bartek/Projects/mysqlDockerVolume:/var/lib/mysql
   
   queue:
-    container_name: rabbitmq
+    container_name: pd-rabbitmq
     image: rabbitmq:3-management
     ports:
       - 15672:15672
       - 5672:5672
   
   azurite:
-    container_name: azurite
+    container_name: pd-azurite
     image: mcr.microsoft.com/azure-storage/azurite:3.19.0-arm64
     ports:
       - 10000:10000

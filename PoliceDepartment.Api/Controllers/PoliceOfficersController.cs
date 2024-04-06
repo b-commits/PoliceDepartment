@@ -25,6 +25,7 @@ public sealed class PoliceOfficersController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get()
     {
+        throw new InvalidDataException();
         return Ok(await policeOfficersService.GetAllAsync());
     }
 

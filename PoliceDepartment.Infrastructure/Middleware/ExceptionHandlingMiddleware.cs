@@ -1,43 +1,32 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PoliceDepartment.Core.Exceptions;
 
 namespace PoliceDepartment.Infrastructure.Middleware;
 
-public sealed class ErrorHandlingMiddleware
+public sealed class GlobalExceptionHandler : IExceptionHandler
 {
-    private readonly RequestDelegate next;
     private readonly IWebHostEnvironment webHostEnvironment;
-    private readonly ILogger<ErrorHandlingMiddleware> logger;
+    private readonly ILogger<GlobalExceptionHandler> logger;
 
-    public ErrorHandlingMiddleware(
-        RequestDelegate next,
+    public GlobalExceptionHandler(
         IWebHostEnvironment webHostEnvironment,
-        ILogger<ErrorHandlingMiddleware> logger)
+        ILogger<GlobalExceptionHandler> logger)
     {
-        this.next = next;
         this.webHostEnvironment = webHostEnvironment;
         this.logger = logger;
     }
-
-    public async Task Invoke(HttpContext context)
+    
+    public async ValueTask<bool> TryHandleAsync(
+        HttpContext httpContext, 
+        Exception exception, 
+        CancellationToken cancellationToken)
     {
-        try
-        {
-            await next.Invoke(context);
-        }
-        catch (Exception exception)
-        {
-            logger.LogError(exception.StackTrace);
-            await HandleExceptionAsync(context, exception);
-        }
-    }
-
-    private async Task HandleExceptionAsync(HttpContext context, Exception exception)
-    {
-        var (statusCode, message, exceptionThrown) = exception switch
+        var (statusCode, message, exceptionName) = exception switch
         {
             BasePoliceDepartmentException => (StatusCodes.Status400BadRequest, exception.Message, 
                 exception.GetType().Name.Replace("Exception", string.Empty)),
@@ -48,8 +37,17 @@ public sealed class ErrorHandlingMiddleware
         
         if (webHostEnvironment.IsDevelopment())
             logger.LogError(exception.StackTrace);
-
-        context.Response.StatusCode = statusCode;
-        await context.Response.WriteAsJsonAsync(new { Exception = exceptionThrown, Message = message });
+        
+        var problemDetails = new ProblemDetails
+        {
+            Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1",
+            Title = exceptionName,
+            Status = statusCode,
+            Detail = message
+        };
+        
+        await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken); 
+        
+        return true;
     }
 }
