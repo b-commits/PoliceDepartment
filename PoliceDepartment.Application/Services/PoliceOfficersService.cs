@@ -6,6 +6,7 @@ using PoliceDepartment.Core.Repositories;
 
 namespace PoliceDepartment.Application.Services;
 
+// TODO This is deprecated and can probably be removed
 public class PoliceOfficersService(IPoliceOfficerRepository policeOfficerRepository) : IPoliceOfficerService
 {
     public Task<IEnumerable<PoliceOfficer>> GetAllAsync()

@@ -14,18 +14,24 @@ public sealed class PoliceOfficer(
     BadgeNumber badgeNumber) : IAuditableEntity
 {
     public Guid Id { get; private init; } = id;
-    public string FirstName { get; private init; } = firstName;
-    public string LastName { get; private init; } = lastName;
-    public BadgeNumber BadgeNumber { get; private init; } = badgeNumber;
-    public BirthDate BirthDate { get; private init; } = birthDate;
+    public string FirstName { get; private set; } = firstName;
+    public string LastName { get; private set; } = lastName;
+    public BadgeNumber BadgeNumber { get; private set; } = badgeNumber;
+    public BirthDate BirthDate { get; private set; } = birthDate;
     
     public DateTimeOffset Created { get; set; }
-    
     public DateTimeOffset Modified { get; set; }
 
     public override string ToString()
         => $"[{Id}] Officer {FirstName} {LastName}, " + 
            $"born {BirthDate}, badge number {BadgeNumber}.";
 
-
+    public void UpdatePoliceOfficer(PoliceOfficer policeOfficer)
+    {
+        BadgeNumber = policeOfficer.BadgeNumber;
+        FirstName = policeOfficer.FirstName;
+        BadgeNumber = policeOfficer.BadgeNumber;
+        BirthDate = policeOfficer.BirthDate;
+    }
+    
 }

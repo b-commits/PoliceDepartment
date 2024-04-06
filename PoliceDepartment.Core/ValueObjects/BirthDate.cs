@@ -11,10 +11,8 @@ public sealed record BirthDate
     public BirthDate(DateOnly value)
     {
         if (value.Year < MinimalBirthYear || value.Year > DateOnly.MaxValue.Year - 20)
-        {
             throw new InvalidBirthDateException(value.Year);
-        }
-
+        
         Value = value;
     }
     

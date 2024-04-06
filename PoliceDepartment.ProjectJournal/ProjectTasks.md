@@ -1,4 +1,4 @@
-### PoliceDepartment Task Tracker
+### [PD] PoliceDepartment Task Tracker
 
 - [X] **[PD-1]** Replace custom exception Handler with .NET8 `IExceptionHandler`
 - [X] **[PD-2]** Replace API responses with `ProblemDetails`
@@ -18,3 +18,6 @@
 - [ ] **[PD-12]** Implement caching with Redis
 - [X] **[PD-13]** Fix data seeding on startup
 - [ ] **[PD-14]** Replace manual seeder with Faker or Mocker or whatever
+- [ ] **[PD-15]** Implement transactions in the handler with `UnitOfWork`
+- [ ] **[PD-16]** Fix binding of object in command; introduce mapping
+- [ ] **[PD-17]** 

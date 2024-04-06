@@ -15,15 +15,18 @@ internal sealed class UpdatePoliceOfficerCommandHandler(
 {
     public async Task<PoliceOfficer> Handle(UpdatePoliceOfficerCommand request, CancellationToken cancellationToken)
     {
-        var policeOfficer = repository.GetByGuidAsync(request.Id);
+        var policeOfficer = await repository.GetByGuidAsync(request.Id);
 
         if (policeOfficer is null)
             throw new OfficerNotFoundException(request.Id);
-
-        var newPoliceOfficer = await repository.UpdateAsync(request.Officer);
+        
+        policeOfficer.UpdatePoliceOfficer(request.Officer);
+        
+        await repository.UpdateAsync(policeOfficer);
+        
         logger.LogInformation("Updated police officer with id '{Guid}'.", policeOfficer.Id);
 
-        return newPoliceOfficer;
+        return policeOfficer;
     }
 }
 

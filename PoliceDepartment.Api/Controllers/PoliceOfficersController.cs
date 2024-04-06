@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
 using PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
+using PoliceDepartment.Application.Handlers.UpdatePoliceOfficer;
 using PoliceDepartment.Application.Services;
 using PoliceDepartment.Core.Entities;
 
@@ -29,8 +30,10 @@ public sealed class PoliceOfficersController(
 
 
     [HttpPut("{id:guid}")]
-    public async Task<ActionResult> Put(PoliceOfficer policeOfficer, Guid id)
-        => Ok(await policeOfficersService.Update(policeOfficer, id));
+    public async Task<ActionResult> Put(Guid id, UpdatePoliceOfficerCommand command)
+    {
+        return Ok(await mediator.Send(command with { Id = id }));   
+    }
     
     [HttpDelete("{id:guid}")]
     public async Task<ActionResult> Delete(Guid id)

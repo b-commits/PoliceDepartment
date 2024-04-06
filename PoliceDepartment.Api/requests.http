@@ -15,3 +15,20 @@ Content-Type: application/json
 
 ### GetPoliceOfficers
 GET https://localhost:5000/PoliceOfficers
+
+### UpdatePoliceOfficer
+PUT https://localhost:5000/PoliceOfficers/08dc564d-10f9-4452-88ce-bba03e31391c
+Content-Type: application/json
+
+{
+  "officer": {
+    "FirstName": "Jon-Michael",
+    "LastName": "Mantinband",
+    "BadgeNumber": {
+      "Value": "#-12132323-123-123"
+    },
+    "BirthDate": {
+      "Value": "1990-02-01"
+    }
+  }
+}

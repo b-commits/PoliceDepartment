@@ -26,9 +26,6 @@ public sealed class GlobalExceptionHandler(
                 nameof(exception))
         };
         
-        if (webHostEnvironment.IsDevelopment())
-            logger.LogError(exception.StackTrace);
-        
         var problemDetails = new ProblemDetails
         {
             Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1",
@@ -36,6 +33,9 @@ public sealed class GlobalExceptionHandler(
             Status = statusCode,
             Detail = message
         };
+        
+        if (webHostEnvironment.IsDevelopment())
+            logger.LogError(exception.StackTrace);
         
         await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken); 
         
