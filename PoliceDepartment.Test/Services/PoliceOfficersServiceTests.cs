@@ -151,6 +151,6 @@ public sealed class PoliceOfficersServiceTests
         async Task Action() => await _sut.AddAsync(command);
 
         // Assert
-        Assert.ThrowsAsync<BadgeNumberAlreadyRegistered>(Action);
+        Assert.ThrowsAsync<BadgeNumberAlreadyRegisteredException>(Action);
     }
 }

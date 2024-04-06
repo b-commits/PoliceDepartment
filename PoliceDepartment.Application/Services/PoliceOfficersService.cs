@@ -38,7 +38,7 @@ public class PoliceOfficersService(IPoliceOfficerRepository policeOfficerReposit
         var existingOfficer = await policeOfficerRepository.GetByBadgeNumberAsync(policeOfficer.BadgeNumber);
         
         if (existingOfficer is not null)
-            throw new BadgeNumberAlreadyRegistered(policeOfficer.BadgeNumber.Value);
+            throw new BadgeNumberAlreadyRegisteredException(policeOfficer.BadgeNumber.Value);
 
         var newOfficer = new PoliceOfficer(policeOfficer.Id, policeOfficer.FirstName, policeOfficer.LastName,
             policeOfficer.BirthDate, policeOfficer.BadgeNumber);
