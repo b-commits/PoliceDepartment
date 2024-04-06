@@ -11,7 +11,7 @@ namespace PoliceDepartment.Api.Controllers;
 [Route("[controller]")]
 public sealed class PoliceOfficersController(
     IPoliceOfficerService policeOfficersService,
-    IMediator mediator)
+    ISender mediator)
     : ControllerBase
 {
     [HttpGet]

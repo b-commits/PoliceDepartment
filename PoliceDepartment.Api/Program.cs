@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSecurity();
+builder.Services.AddInterceptors();
 builder.Services.AddProblemDetails();
 builder.Services.AddPoliceDepartmentDatabase();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();

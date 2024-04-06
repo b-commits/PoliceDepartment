@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using PoliceDepartment.Application.Mappers;
 using PoliceDepartment.Core.Entities;
 using PoliceDepartment.Core.Repositories;
 
@@ -14,8 +15,7 @@ internal sealed class CreatePoliceOfficerCommandHandler(
 {
     public async Task<PoliceOfficer> Handle(CreatePoliceOfficerCommand request, CancellationToken cancellationToken)
     {
-        var policeOfficer = new PoliceOfficer(request.Id, request.FirstName, request.LastName, request.BirthDate,
-            request.BadgeNumber);
+        var policeOfficer = PoliceOfficerMapper.Map(request);
 
         await repository.AddAsync(policeOfficer);
 

@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using PoliceDepartment.Core.Enums;
 using PoliceDepartment.Core.Exceptions;
+using PoliceDepartment.Core.Primitives;
 using PoliceDepartment.Core.ValueObjects;
 
 namespace PoliceDepartment.Core.Entities;
@@ -11,7 +12,7 @@ public class OperationalGroup(
     Guid id,
     OperationalGroupName operationalGroupName,
     HashSet<PoliceOfficer> policeOfficers,
-    DateOnly dateFormed)
+    DateOnly dateFormed) : IAuditableEntity
 {
     public Guid Id { get; private init; } = id;
     public OperationalGroupName OperationalGroupName { get; private init; } = operationalGroupName;
@@ -19,6 +20,8 @@ public class OperationalGroup(
     public HashSet<PoliceOfficer> PoliceOfficers { get; private init; } = policeOfficers;
     public DateOnly DateFormed { get; private init; } = dateFormed;
     public DateTime? DateDisbanded { get; set; } = null;
+    public DateTimeOffset Created { get; set; }
+    public DateTimeOffset Modified { get; set; }
 
     private const int MaxPoliceOfficers = 10;
 
@@ -47,6 +50,10 @@ public class OperationalGroup(
     
 
     public override string ToString() => 
-        @$"[{Id}] Operational group {OperationalGroupName}, 
-        number of members: {PoliceOfficers.Count}, status: {OperationalGroupStatus}";
+        $"""
+         [{Id}] Operational group {OperationalGroupName},
+                 number of members: {PoliceOfficers.Count}, status: {OperationalGroupStatus}
+         """;
+
+
 }

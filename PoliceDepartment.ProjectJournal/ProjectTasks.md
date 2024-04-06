@@ -3,11 +3,17 @@
 - [X] **[PD-1]** Replace custom exception Handler with .NET8 `IExceptionHandler`
 - [X] **[PD-2]** Replace API responses with `ProblemDetails`
 - [ ] **[PD-3]** Review logging: see if I can use a free tier NewRelic
-- [ ] **[PD-4]** Review JWT user authentication
+- [ ] **[PD-4]** Review JWT user authorization
 - [ ] **[PD-5]** Deploy to Azure
   - [ ] **[PD-5-1]** Create the build pipeline
   - [ ] **[PD-5-2]** Create the deploy pipeline
   - [ ] **[PD-5-3]** Set up Azure App Service? Use K8 Cluster deployment?
 - [X] **[PD-6]** Replace `DateTimeProvider` with the .NET8 library
-- [ ] **[PD-7]** Add `CreatedDate` and `LastModifed` to all tables
+- [X] **[PD-7]** Add `CreatedDate` and `LastModifed` to all tables
 - [X] **[PD-8]** Refactor handlers to use primary constructors
+- [ ] **[PD-9]** Review logging to file and colouring the output
+- [ ] **[PD-10]** Implement some sort of document upload 
+  - [ ] **[PD-10-1]** Implement custom template for PDFs
+- [ ] **[PD-11]** Implement a background job that will send out e-mails
+- [ ] **[PD-12]** Implement caching with Redis
+- 
