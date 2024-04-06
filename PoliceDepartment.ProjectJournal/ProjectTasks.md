@@ -16,4 +16,5 @@
   - [ ] **[PD-10-1]** Implement custom template for PDFs
 - [ ] **[PD-11]** Implement a background job that will send out e-mails
 - [ ] **[PD-12]** Implement caching with Redis
-- 
+- [X] **[PD-13]** Fix data seeding on startup
+- [ ] **[PD-14]** Replace manual seeder with Faker or Mocker or whatever
