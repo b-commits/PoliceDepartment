@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using PoliceDepartment.Application.Security;
 using PoliceDepartment.Core.Entities;
+using PoliceDepartment.Core.Repositories;
 
 namespace PoliceDepartment.Application.Handlers.SignUp;
 
@@ -10,6 +11,7 @@ namespace PoliceDepartment.Application.Handlers.SignUp;
 internal sealed class SignUpCommandHandler(
     TimeProvider timeProvider,
     ILogger<SignUpCommandHandler> logger,
+    IUserRepository userRepository,
     IPasswordManager passwordManager)
     : IRequestHandler<SignUpCommand>
 {
@@ -22,6 +24,8 @@ internal sealed class SignUpCommandHandler(
             request.Username,
             securedPassword,
             request.Role);
+
+        await userRepository.AddAsync(user);
         
         logger.LogInformation("Created user with email: '{email}'.", request.Email);
     }
