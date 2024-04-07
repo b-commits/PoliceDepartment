@@ -32,10 +32,8 @@ public sealed class PoliceOfficersController(
 
 
     [HttpPut("{id:guid}")]
-    public async Task<ActionResult> Put(Guid id, UpdatePoliceOfficerCommand command)
-    {
-        return Ok(await mediator.Send(command with { Id = id }));   
-    }
+    public async Task<ActionResult> Put(Guid id, UpdatePoliceOfficerCommand command) 
+        => Ok(await mediator.Send(command with { Id = id }));   
     
     [HttpDelete("{id:guid}")]
     public async Task<ActionResult> Delete(Guid id)

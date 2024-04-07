@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PoliceDepartment.Core.Exceptions;
@@ -9,7 +9,8 @@ namespace PoliceDepartment.Infrastructure.Middleware;
 
 public sealed class GlobalExceptionHandler(
     IHostEnvironment webHostEnvironment,
-    ILogger<GlobalExceptionHandler> logger)
+    ILogger<GlobalExceptionHandler> logger,
+    ProblemDetailsFactory problemDetailsFactory)
     : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(
@@ -20,25 +21,29 @@ public sealed class GlobalExceptionHandler(
         var (statusCode, message, exceptionName) = exception switch
         {
             BasePoliceDepartmentException => (StatusCodes.Status400BadRequest, exception.Message, 
-                exception.GetType().Name.Replace("Exception", string.Empty)),
-            _ => (StatusCodes.Status500InternalServerError, 
-                webHostEnvironment.IsDevelopment() ? exception.Message : "An error occurred.", 
-                nameof(exception))
+                GetExceptionName(exception)),
+            _ => (StatusCodes.Status500InternalServerError, exception.Message, GetExceptionName(exception))
         };
-        
-        var problemDetails = new ProblemDetails
-        {
-            Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1",
-            Title = exceptionName,
-            Status = statusCode,
-            Detail = message
-        };
+
+        var problemDetails = problemDetailsFactory.CreateProblemDetails(
+            httpContext, 
+            statusCode, 
+            $"An error has occurred: {exceptionName}", 
+            detail: message);
         
         if (webHostEnvironment.IsDevelopment())
-            logger.LogError(exception.StackTrace);
+        {
+            logger.LogError("{exceptionName}: {exception.StackTrace}", 
+                exceptionName, exception.StackTrace);
+            problemDetails.Extensions["stackTrace"] = exception.StackTrace;
+        }
         
         await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken); 
         
         return true;
     }
+
+    private static string GetExceptionName(Exception ex)
+        => ex.GetType().Name.Replace("Exception", string.Empty);
+
 }

@@ -23,6 +23,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 app.ConfigureSwagger();
+app.UseExceptionHandler();
 app.UseHttpsRedirection();
 app.MapControllers();
 

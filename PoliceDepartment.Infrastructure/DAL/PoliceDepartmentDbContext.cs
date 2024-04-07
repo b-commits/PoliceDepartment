@@ -9,7 +9,7 @@ using PoliceDepartment.Infrastructure.Interceptors;
 namespace PoliceDepartment.Infrastructure.DAL;
 
 [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
-public class PoliceDepartmentDbContext : DbContext
+internal class PoliceDepartmentDbContext : DbContext
 {
     private readonly IConfiguration _configuration;
     private readonly ILogger<PoliceDepartmentDbContext> _logger;

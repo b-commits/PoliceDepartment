@@ -19,16 +19,13 @@ public sealed class UsersController(ISender mediator) : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult> SignIn(SignInCommand command)
-    {
-        return Ok(await mediator.Send(command));
-    }
+    public async Task<ActionResult> SignIn(SignInCommand command) 
+        => Ok(await mediator.Send(command));
+    
 
     [HttpGet]
     [Authorize]
-    public async Task<ActionResult> WhoAmI()
-    {
-        return Ok(await mediator.Send(new WhoAmIQuery()));
-    }
+    public async Task<ActionResult> WhoAmI() 
+        => Ok(await mediator.Send(new WhoAmIQuery()));
     
 }
