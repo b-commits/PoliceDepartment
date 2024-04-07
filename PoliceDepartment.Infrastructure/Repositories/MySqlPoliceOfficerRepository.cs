@@ -6,7 +6,7 @@ using PoliceDepartment.Infrastructure.DAL;
 
 namespace PoliceDepartment.Infrastructure.Repositories;
 
-public sealed class MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbContext) : IPoliceOfficerRepository
+internal sealed class MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbContext) : IPoliceOfficerRepository
 {
     public async Task<IEnumerable<PoliceOfficer>> GetAllAsync() 
         => await dbContext.PoliceOfficers.ToListAsync();

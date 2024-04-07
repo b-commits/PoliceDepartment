@@ -25,11 +25,12 @@ public static class ServiceCollectionExtension
     {
         var options = new AuthOptions();
         configuration.GetSection(AuthOptions.OptionsKey).Bind(options);
-
+        
         services
             .AddScoped<ICurrentUserService, CurrentUserService>()
             .AddHttpContextAccessor()
             .AddSingleton<JwtSecurityTokenHandler>()
+
             .AddSingleton<IAuthenticator, Authenticator>()
             .AddAuthentication(x =>
             {
@@ -47,5 +48,6 @@ public static class ServiceCollectionExtension
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SigningKey))
                 };
             });
+        services.AddAuthorization();
     }
 }

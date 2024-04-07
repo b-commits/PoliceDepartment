@@ -53,3 +53,7 @@ Content-Type: application/json
   "Email": "reader@pd.com",
   "Password": "password123"
 }
+
+### WhoAmI
+GET https://localhost:5000/users/whoami
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWFkZXJAcGQuY29tIiwidW5pcXVlX25hbWUiOiJyZWFkZXJAcGQuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmVhZGVyQHBkLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlJlYWRlciIsIm5iZiI6MTcxMjQ5NjEzMywiZXhwIjoxNzEyNTI0OTMzLCJpc3MiOiJwZCIsImF1ZCI6InBkLXVzZXJzIn0.vXJLIhqD2pSfeZFGjw6xqvu0X2xaO_o1d_qcDaiMolQ

@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using PoliceDepartment.Application.Security;
 using PoliceDepartment.Core.Entities;
@@ -12,8 +13,8 @@ internal sealed class CurrentUserService(
 {
     public async Task<User?> GetAsync()
     {
-        var email = httpContextAccessor.HttpContext?.User.FindFirst("Email")?.Value;
-
+        var email = httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.Email)?.Value;
+        
         return email is not null ? await userRepository.GetUserByEmailAsync(email) : null;
     }
 }

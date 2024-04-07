@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
 using PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
@@ -9,6 +10,7 @@ using PoliceDepartment.Core.Entities;
 namespace PoliceDepartment.Api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public sealed class PoliceOfficersController(
     IPoliceOfficerService policeOfficersService,

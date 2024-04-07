@@ -5,7 +5,7 @@ using PoliceDepartment.Infrastructure.DAL;
 
 namespace PoliceDepartment.Infrastructure.Repositories;
 
-public class MySqlUserRepository(PoliceDepartmentDbContext dbContext) : IUserRepository
+internal sealed class MySqlUserRepository(PoliceDepartmentDbContext dbContext): IUserRepository
 {
     public async Task AddAsync(User user)
     {

@@ -18,7 +18,7 @@ internal sealed class Authenticator(
         
         configuration.GetSection(AuthOptions.OptionsKey).Bind(options);
         
-        var now = timeProvider.GetUtcNow().DateTime;
+        var now = timeProvider.GetLocalNow().DateTime;
         var expires = options.Expiry is not null ? 
             now.Add(options.Expiry.Value) : 
             now.Add(TimeSpan.FromHours(5));
@@ -30,6 +30,7 @@ internal sealed class Authenticator(
         {
             new(JwtRegisteredClaimNames.Sub, email),
             new(JwtRegisteredClaimNames.UniqueName, email),
+            new(ClaimTypes.Email, email),
             new(ClaimTypes.Role, role)
         };
 
@@ -41,15 +42,9 @@ internal sealed class Authenticator(
             signingCredentials: signingCredentials, 
             notBefore: now);
 
-        var b = new JwtSecurityTokenHandler();
-
-        var a = b.CanWriteToken;
-
-        string token = b.WriteToken(jwtSecurityToken);
-
         return new JwtDto
         {
-            AccessToken = token
+            AccessToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken)
         };
 
     }
