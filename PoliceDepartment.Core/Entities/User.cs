@@ -18,7 +18,4 @@ public sealed class User(
     public UserRole Role { get; private set; } = role;
     public DateTimeOffset Created { get; set; }
     public DateTimeOffset Modified { get; set; }
-    
-     
-    
 }

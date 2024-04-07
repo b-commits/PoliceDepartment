@@ -29,5 +29,4 @@ internal sealed class MySqlUserRepository(PoliceDepartmentDbContext dbContext): 
         return null;
     }
     
-    
 }
