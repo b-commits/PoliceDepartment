@@ -5,7 +5,10 @@ using PoliceDepartment.Core.ValueObjects;
 namespace PoliceDepartment.Core.Entities;
 
 public sealed class User(
-    Guid id, string email, Username username, string password,
+    Guid id, 
+    string email, 
+    Username username, 
+    string password,
     UserRole role) : IAuditableEntity
 {
     public Guid Id { get; private set; } = id;
@@ -16,5 +19,6 @@ public sealed class User(
     public DateTimeOffset Created { get; set; }
     public DateTimeOffset Modified { get; set; }
     
-
+     
+    
 }

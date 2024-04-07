@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,9 +23,13 @@ public static class ServiceCollectionExtension
 
     public static void AddAuth(this IServiceCollection services, IConfiguration configuration)
     {
-        var authOptions = configuration.Get<JwtOptions>();
+        var options = new AuthOptions();
+        configuration.GetSection(AuthOptions.OptionsKey).Bind(options);
 
         services
+            .AddScoped<ICurrentUserService, CurrentUserService>()
+            .AddHttpContextAccessor()
+            .AddSingleton<JwtSecurityTokenHandler>()
             .AddSingleton<IAuthenticator, Authenticator>()
             .AddAuthentication(x =>
             {
@@ -33,13 +38,13 @@ public static class ServiceCollectionExtension
             })
             .AddJwtBearer(x =>
             {
-                x.Audience = authOptions!.Audience;
+                x.Audience = options.Audience;
                 x.IncludeErrorDetails = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidIssuer = authOptions.Issuer,
+                    ValidIssuer = options.Issuer,
                     ClockSkew = TimeSpan.Zero,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authOptions.SigningKey!))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SigningKey))
                 };
             });
     }

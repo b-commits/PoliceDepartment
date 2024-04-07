@@ -13,13 +13,13 @@ internal sealed class SignInCommandHandler : IRequestHandler<SignInCommand, JwtD
     private readonly IPasswordManager passwordManager;
     private readonly IAuthenticator authenticator;
     private readonly IUserRepository userRepository;
-    private readonly ILogger logger;
+    private readonly ILogger<SignInCommandHandler> logger;
 
     public SignInCommandHandler(
         IPasswordManager passwordManager, 
         IAuthenticator authenticator, 
         IUserRepository userRepository, 
-        ILogger logger)
+        ILogger<SignInCommandHandler> logger)
     {
         this.passwordManager = passwordManager;
         this.authenticator = authenticator;
@@ -29,20 +29,27 @@ internal sealed class SignInCommandHandler : IRequestHandler<SignInCommand, JwtD
 
     public async Task<JwtDto> Handle(SignInCommand request, CancellationToken cancellationToken)
     {
-        var securedPassword = passwordManager.Secure(request.email);
+        var securedPassword = passwordManager.Secure(request.Password);
         
-        var isPasswordValid = passwordManager.Validate(request.email, securedPassword);
+        var isPasswordValid = passwordManager.Validate(request.Password, securedPassword);
 
         if (!isPasswordValid)
         {
-            logger.LogError("Invalid password provided for user '{email}'", request.username);
+            logger.LogError("Invalid password provided for user '{email}'", request.Email);
             throw new InvalidPasswordException();
         }
    
-        var user = await userRepository.GetUserByEmailAsync(request.email);
+        var user = await userRepository.GetUserByEmailAsync(request.Email);
+
+        if (user is null)
+        {
+            logger.LogError("User with email '{email}' could not be found.", request.Email);
+            // Replace with user not found 
+            throw new InvalidPasswordException();
+        }
+        
         var token = authenticator.CreateToken(user.Email, user.Role.ToString());
         
-
         return token;
     }
 }

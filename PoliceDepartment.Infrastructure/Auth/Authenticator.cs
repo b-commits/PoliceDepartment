@@ -7,31 +7,24 @@ using PoliceDepartment.Application.Security;
 
 namespace PoliceDepartment.Infrastructure.Auth;
 
-internal sealed class Authenticator : IAuthenticator
+internal sealed class Authenticator(
+    IConfiguration configuration,
+    TimeProvider timeProvider)
+    : IAuthenticator
 {
-    private readonly IConfiguration configuration;
-    private readonly TimeProvider timeProvider;
-    private readonly JwtSecurityTokenHandler jwtSecurityTokenHandler;
-
-    public Authenticator(
-        IConfiguration configuration, 
-        TimeProvider timeProvider, 
-        JwtSecurityTokenHandler jwtSecurityTokenHandler)
-    {
-        this.configuration = configuration;
-        this.timeProvider = timeProvider;
-        this.jwtSecurityTokenHandler = jwtSecurityTokenHandler;
-    }
-
     public JwtDto CreateToken(string email, string role)
     {
-        var authOptions = configuration.Get<JwtOptions>();
-        var now = timeProvider.GetUtcNow().Date;
-        var expires = now.Add(authOptions.Expiry.Value).Date;
+        var options = new AuthOptions();
+        
+        configuration.GetSection(AuthOptions.OptionsKey).Bind(options);
+        
+        var now = timeProvider.GetUtcNow().DateTime;
+        var expires = options.Expiry is not null ? 
+            now.Add(options.Expiry.Value) : 
+            now.Add(TimeSpan.FromHours(5));
 
         var signingCredentials = new SigningCredentials(
-            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authOptions.SigningKey)),
-            SecurityAlgorithms.HmacSha256);
+            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SigningKey)), SecurityAlgorithms.HmacSha256);
         
         var claims = new List<Claim>
         {
@@ -40,12 +33,23 @@ internal sealed class Authenticator : IAuthenticator
             new(ClaimTypes.Role, role)
         };
 
-        var jwt = new JwtSecurityToken(authOptions.Issuer, authOptions.Audience, claims, expires: expires,
-            signingCredentials: signingCredentials, notBefore: now);
+        var jwtSecurityToken = new JwtSecurityToken(
+            options.Issuer, 
+            options.Audience, 
+            claims, 
+            expires: expires,
+            signingCredentials: signingCredentials, 
+            notBefore: now);
+
+        var b = new JwtSecurityTokenHandler();
+
+        var a = b.CanWriteToken;
+
+        string token = b.WriteToken(jwtSecurityToken);
 
         return new JwtDto
         {
-            AccessToken = jwtSecurityTokenHandler.WriteToken(jwt)
+            AccessToken = token
         };
 
     }

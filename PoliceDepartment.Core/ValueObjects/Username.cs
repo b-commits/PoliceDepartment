@@ -4,16 +4,16 @@ namespace PoliceDepartment.Core.ValueObjects;
 
 public sealed record Username
 {
-    public string Name { get; set;  }
+    public string Value { get; set;  }
 
     private const int maxUserNameLength = 20;
 
-    public Username(string name)
+    public Username(string value)
     {
-        if (name.Length > maxUserNameLength || HasIllegalCharacter(name))
+        if (value.Length > maxUserNameLength || HasIllegalCharacter(value))
             throw new InvalidUsernameException($"Username cannot be longer than {maxUserNameLength} character");
         
-        Name = name;
+        Value = value;
     }
     
     private static bool HasIllegalCharacter(string name)

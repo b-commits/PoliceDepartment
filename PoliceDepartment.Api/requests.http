@@ -32,3 +32,24 @@ Content-Type: application/json
     }
   }
 }
+
+### SignUp
+POST https://localhost:5000/users/signup
+Content-Type: application/json
+
+{
+  "Email": "reader@pd.com",
+  "Username": {
+    "Value": "reader"
+  },
+  "Password": "password123"
+}
+
+### SignIn
+POST https://localhost:5000/users/signin
+Content-Type: application/json
+
+{
+  "Email": "reader@pd.com",
+  "Password": "password123"
+}

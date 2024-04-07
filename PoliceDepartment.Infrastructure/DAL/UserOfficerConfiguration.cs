@@ -16,7 +16,7 @@ internal sealed class UserOfficerConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(x => x.Role).HasColumnType("nvarchar(30)");
         builder.Property(x => x.Username)
-            .HasConversion(x => x.Name,
+            .HasConversion(x => x.Value,
                 x => new Username(x));
 
         var converter = new EnumToStringConverter<UserRole>();

@@ -3,7 +3,7 @@
 - [X] **[PD-1]** Replace custom exception Handler with .NET8 `IExceptionHandler`
 - [X] **[PD-2]** Replace API responses with `ProblemDetails`
 - [ ] **[PD-3]** Review logging: see if I can use a free tier NewRelic
-- [ ] **[PD-4]** Review JWT user authorization
+- [X] **[PD-4]** Review JWT user authorization
 - [ ] **[PD-5]** Deploy to Azure
   - [ ] **[PD-5-1]** Create the build pipeline
   - [ ] **[PD-5-2]** Create the deploy pipeline
@@ -22,3 +22,4 @@
 - [ ] **[PD-16]** Fix binding of object in command; introduce mapping
 - [ ] **[PD-17]** Read signing key from KeyVault
 - [ ] **[PD-18]** Implement generic options pattern
+- [X] **[PD-19]** Add `CurrentUser` service

@@ -6,8 +6,11 @@ using PoliceDepartment.Infrastructure.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var configuration = builder.Configuration;
+
 builder.Services.AddControllers();
 builder.Services.AddSecurity();
+builder.Services.AddAuth(configuration);
 builder.Services.AddInterceptors();
 builder.Services.AddProblemDetails();
 builder.Services.AddPoliceDepartmentDatabase();

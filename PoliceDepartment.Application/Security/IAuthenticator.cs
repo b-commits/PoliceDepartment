@@ -7,5 +7,5 @@ public interface IAuthenticator
 
 public class JwtDto
 {
-    public string AccessToken { get; set; }
+    public string AccessToken { get; set; } = null!;
 }
