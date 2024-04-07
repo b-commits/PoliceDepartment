@@ -13,6 +13,8 @@ public sealed class UsersController(ISender mediator) : ControllerBase
 {
     [HttpPost]
     [AllowAnonymous]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> SignUp(SignUpCommand command)
     {
         await mediator.Send(command);
@@ -21,13 +23,18 @@ public sealed class UsersController(ISender mediator) : ControllerBase
 
     [HttpPost]
     [AllowAnonymous]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> SignIn(SignInCommand command) 
         => Ok(await mediator.Send(command));
     
 
     [HttpGet]
     [Authorize]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> WhoAmI() 
         => Ok(await mediator.Send(new WhoAmIQuery()));
-    
 }

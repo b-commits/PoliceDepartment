@@ -23,4 +23,4 @@
 - [ ] **[PD-17]** Read signing key from KeyVault
 - [ ] **[PD-18]** Implement generic options pattern
 - [X] **[PD-19]** Add `CurrentUser` service
-- [ ] **[PD-20]** Add Swagger's `ProducesResponseType` attributes on controllers
+- [X] **[PD-20]** Add Swagger's `ProducesResponseType` attributes on controllers

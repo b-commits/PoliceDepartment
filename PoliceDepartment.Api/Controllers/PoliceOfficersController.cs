@@ -19,28 +19,41 @@ public sealed class PoliceOfficersController(
 {
     [HttpGet]
     [AllowAnonymous]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get()
         => Ok(await policeOfficersService.GetAllAsync());
     
 
     [HttpGet("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<PoliceOfficer>> Get(Guid id)
         => Ok(await policeOfficersService.GetByGuidAsync(id));
     
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<PoliceOfficer>> Post(CreatePoliceOfficerCommand command) 
         => CreatedAtAction(nameof(Get), await mediator.Send(command));
 
 
     [HttpPut("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> Put(Guid id, UpdatePoliceOfficerCommand command) 
         => Ok(await mediator.Send(command with { Id = id }));   
     
     [HttpDelete("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> Delete(Guid id)
     {
         await policeOfficersService.RemoveAsync(new DeletePoliceOfficerCommand(id));
         return NoContent();
     }
-    
 }
