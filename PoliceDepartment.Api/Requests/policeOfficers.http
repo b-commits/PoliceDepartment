@@ -1,0 +1,42 @@
+@baseUrl =  https://localhost:5000/PoliceOfficers
+
+### 
+# @name CreatePoliceOfficer
+POST {{baseUrl}}/PoliceOfficers
+Content-Type: application/json
+Authorization: {{token}}}
+
+{
+  "FirstName": "LeBron",
+  "LastName": "Dejouve",
+  "BadgeNumber": {
+    "Value": "#-979-134-345"
+  },
+  "BirthDate": {
+    "Value": "1995-03-22"
+  }
+}
+
+### 
+# @name GetPoliceOfficers
+GET {{baseUrl}}/PoliceOfficers
+Authorization: {{token}}
+
+### 
+# @name UpdatePoliceOfficer
+PUT {{baseUrl}}/08dc564d-10f9-4452-88ce-bba03e31391c
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "officer": {
+    "FirstName": "Jon-Michael",
+    "LastName": "Mantinband",
+    "BadgeNumber": {
+      "Value": "#-12132323-123-123"
+    },
+    "BirthDate": {
+      "Value": "1990-02-01"
+    }
+  }
+}

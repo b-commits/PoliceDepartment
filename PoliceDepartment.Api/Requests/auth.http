@@ -1,0 +1,31 @@
+@baseUrl =  https://localhost:5000/users
+
+### 
+# @name SignIn
+POST {{baseUrl}}/signin
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "Email": "reader@pd.com",
+  "Password": "password123"
+}
+
+###
+# @name SignUp
+POST {{baseUrl}}/signup
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "Email": "reader@pd.com",
+  "Username": {
+    "Value": "reader"
+  },
+  "Password": "password123"
+}
+
+### 
+# @name WhoAmI
+GET {{baseUrl}}users/whoami
+Authorization: {{token}}

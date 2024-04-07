@@ -1,41 +1,4 @@
-### CreatePoliceOfficer
-POST https://localhost:5000/PoliceOfficers
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWFkZXJAcGQuY29tIiwidW5pcXVlX25hbWUiOiJyZWFkZXJAcGQuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmVhZGVyQHBkLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlJlYWRlciIsIm5iZiI6MTcxMjQ5NjEzMywiZXhwIjoxNzEyNTI0OTMzLCJpc3MiOiJwZCIsImF1ZCI6InBkLXVzZXJzIn0.vXJLIhqD2pSfeZFGjw6xqvu0X2xaO_o1d_qcDaiMolQ
 
-{
-  "FirstName": "LeBron",
-  "LastName": "Dejouve",
-  "BadgeNumber": {
-    "Value": "#-979-134-345"
-  },
-  "BirthDate": {
-    "Value": "1995-03-22" 
-  }
-}
-
-### GetPoliceOfficers
-GET https://localhost:5000/PoliceOfficers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWFkZXJAcGQuY29tIiwidW5pcXVlX25hbWUiOiJyZWFkZXJAcGQuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmVhZGVyQHBkLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlJlYWRlciIsIm5iZiI6MTcxMjQ5NjEzMywiZXhwIjoxNzEyNTI0OTMzLCJpc3MiOiJwZCIsImF1ZCI6InBkLXVzZXJzIn0.vXJLIhqD2pSfeZFGjw6xqvu0X2xaO_o1d_qcDaiMolQ 
-
-### UpdatePoliceOfficer
-PUT https://localhost:5000/PoliceOfficers/08dc564d-10f9-4452-88ce-bba03e31391c
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWFkZXJAcGQuY29tIiwidW5pcXVlX25hbWUiOiJyZWFkZXJAcGQuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmVhZGVyQHBkLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlJlYWRlciIsIm5iZiI6MTcxMjQ5NjEzMywiZXhwIjoxNzEyNTI0OTMzLCJpc3MiOiJwZCIsImF1ZCI6InBkLXVzZXJzIn0.vXJLIhqD2pSfeZFGjw6xqvu0X2xaO_o1d_qcDaiMolQ
-
-Content-Type: application/json
-
-{
-  "officer": {
-    "FirstName": "Jon-Michael",
-    "LastName": "Mantinband",
-    "BadgeNumber": {
-      "Value": "#-12132323-123-123"
-    },
-    "BirthDate": {
-      "Value": "1990-02-01"
-    }
-  }
-}
 
 ### SignUp
 POST https://localhost:5000/users/signup
