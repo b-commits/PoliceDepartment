@@ -20,4 +20,5 @@
 - [ ] **[PD-14]** Replace manual seeder with Faker or Mocker or whatever
 - [ ] **[PD-15]** Implement transactions in the handler with `UnitOfWork`
 - [ ] **[PD-16]** Fix binding of object in command; introduce mapping
-- [ ] **[PD-17]** 
+- [ ] **[PD-17]** Read signing key from KeyVault
+- [ ] **[PD-18]** Implement generic options pattern

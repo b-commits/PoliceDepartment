@@ -12,9 +12,9 @@ internal sealed class UserOfficerConfiguration : IEntityTypeConfiguration<User>
     public void Configure(EntityTypeBuilder<User> builder)
     {
         builder.HasKey(x => x.Id);
+        builder.HasIndex(x => x.Email).IsUnique();
 
         builder.Property(x => x.Role).HasColumnType("nvarchar(30)");
-        
         builder.Property(x => x.Username)
             .HasConversion(x => x.Name,
                 x => new Username(x));
