@@ -12,6 +12,7 @@ namespace PoliceDepartment.Api.Controllers;
 public sealed class UsersController(ISender mediator) : ControllerBase
 {
     [HttpPost]
+    [AllowAnonymous]
     public async Task<ActionResult> SignUp(SignUpCommand command)
     {
         await mediator.Send(command);
@@ -19,6 +20,7 @@ public sealed class UsersController(ISender mediator) : ControllerBase
     }
 
     [HttpPost]
+    [AllowAnonymous]
     public async Task<ActionResult> SignIn(SignInCommand command) 
         => Ok(await mediator.Send(command));
     

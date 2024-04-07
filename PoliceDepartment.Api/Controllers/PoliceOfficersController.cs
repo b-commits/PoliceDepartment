@@ -18,6 +18,7 @@ public sealed class PoliceOfficersController(
     : ControllerBase
 {
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get()
         => Ok(await policeOfficersService.GetAllAsync());
     
