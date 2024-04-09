@@ -10,7 +10,8 @@ namespace PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
 [UsedImplicitly]
 internal sealed class CreatePoliceOfficerCommandHandler(
     IPoliceOfficerRepository repository,
-    ILogger<IPoliceOfficerRepository> logger)
+    ILogger<IPoliceOfficerRepository> logger, 
+    MySqlUnitOfWork unitOfWork)
     : IRequestHandler<CreatePoliceOfficerCommand, PoliceOfficer>
 {
     public async Task<PoliceOfficer> Handle(CreatePoliceOfficerCommand request, CancellationToken cancellationToken)
