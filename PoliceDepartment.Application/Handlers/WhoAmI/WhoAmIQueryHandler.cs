@@ -13,8 +13,6 @@ internal sealed class WhoAmIQueryHandler(
 {
     public async Task<User?> Handle(WhoAmIQuery request, CancellationToken cancellationToken)
     {
-        var currentUser = await currentUserService.GetAsync();
-        throw new InvalidProgramException();
-        logger.LogInformation("Current ");
+        return await currentUserService.GetAsync();
     }
 }
