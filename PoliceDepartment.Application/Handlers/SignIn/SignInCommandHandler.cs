@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using PoliceDepartment.Application.Exceptions;
 using PoliceDepartment.Application.Security;
+using PoliceDepartment.Core.Exceptions;
 using PoliceDepartment.Core.Repositories;
 
 namespace PoliceDepartment.Application.Handlers.SignIn;
@@ -10,10 +11,10 @@ namespace PoliceDepartment.Application.Handlers.SignIn;
 [UsedImplicitly]
 internal sealed class SignInCommandHandler : IRequestHandler<SignInCommand, JwtDto>
 {
-    private readonly IPasswordManager passwordManager;
-    private readonly IAuthenticator authenticator;
-    private readonly IUserRepository userRepository;
-    private readonly ILogger<SignInCommandHandler> logger;
+    private readonly IPasswordManager _passwordManager;
+    private readonly IAuthenticator _authenticator;
+    private readonly IUserRepository _userRepository;
+    private readonly ILogger<SignInCommandHandler> _logger;
 
     public SignInCommandHandler(
         IPasswordManager passwordManager, 
@@ -21,34 +22,33 @@ internal sealed class SignInCommandHandler : IRequestHandler<SignInCommand, JwtD
         IUserRepository userRepository, 
         ILogger<SignInCommandHandler> logger)
     {
-        this.passwordManager = passwordManager;
-        this.authenticator = authenticator;
-        this.userRepository = userRepository;
-        this.logger = logger;
+        _passwordManager = passwordManager;
+        _authenticator = authenticator;
+        _userRepository = userRepository;
+        _logger = logger;
     }
 
     public async Task<JwtDto> Handle(SignInCommand request, CancellationToken cancellationToken)
     {
-        var securedPassword = passwordManager.Secure(request.Password);
+        var securedPassword = _passwordManager.Secure(request.Password);
         
-        var isPasswordValid = passwordManager.Validate(request.Password, securedPassword);
+        var isPasswordValid = _passwordManager.Validate(request.Password, securedPassword);
 
         if (!isPasswordValid)
         {
-            logger.LogError("Invalid password provided for user '{email}'", request.Email);
+            _logger.LogError("Invalid password provided for user '{email}'", request.Email);
             throw new InvalidPasswordException();
         }
    
-        var user = await userRepository.GetUserByEmailAsync(request.Email);
+        var user = await _userRepository.GetUserByEmailAsync(request.Email);
 
         if (user is null)
         {
-            logger.LogError("User with email '{email}' could not be found.", request.Email);
-            // Replace with user not found 
-            throw new InvalidPasswordException();
+            _logger.LogError("User with email '{email}' could not be found.", request.Email);
+            throw new InvalidUsernameException(request.Email);
         }
         
-        var token = authenticator.CreateToken(user.Email, user.Role.ToString());
+        var token = _authenticator.CreateToken(user.Email, user.Role.ToString());
         
         return token;
     }

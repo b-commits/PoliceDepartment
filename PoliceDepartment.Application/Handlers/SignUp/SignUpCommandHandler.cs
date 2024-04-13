@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using PoliceDepartment.Application.Security;
 using PoliceDepartment.Core.Entities;
 using PoliceDepartment.Core.Enums;
+using PoliceDepartment.Core.Exceptions;
 using PoliceDepartment.Core.Repositories;
 
 namespace PoliceDepartment.Application.Handlers.SignUp;
@@ -13,9 +14,9 @@ internal sealed class SignUpCommandHandler(
     ILogger<SignUpCommandHandler> logger,
     IUserRepository userRepository,
     IPasswordManager passwordManager)
-    : IRequestHandler<SignUpCommand>
+    : IRequestHandler<SignUpCommand, User?>
 {
-    public async Task Handle(SignUpCommand request, CancellationToken cancellationToken)
+    public async Task<User?> Handle(SignUpCommand request, CancellationToken cancellationToken)
     {
         var securedPassword = passwordManager.Secure(request.Password);
 
@@ -24,7 +25,7 @@ internal sealed class SignUpCommandHandler(
         if (userExists is not null)
         {
             logger.LogError("Cannot create a user because email '{email}' is already taken", request.Email);
-            throw new Exception();
+            throw new InvalidUsernameException(request.Username.Value);
         }
 
         var user = new User(Guid.NewGuid(), request.Email, request.Username, securedPassword, UserRole.Reader);
@@ -32,5 +33,7 @@ internal sealed class SignUpCommandHandler(
         await userRepository.AddAsync(user);
         
         logger.LogInformation("Created user with email: '{email}'.", request.Email);
+
+        return user;
     }
 }

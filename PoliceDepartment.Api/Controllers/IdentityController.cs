@@ -16,10 +16,8 @@ public sealed class IdentityController(ISender mediator) : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> SignUp(SignUpCommand command)
-    {
-        await mediator.Send(command);
-        return Ok();
-    }
+        => Ok(await mediator.Send(command));
+    
 
     [HttpPost]
     [AllowAnonymous]
