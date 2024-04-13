@@ -27,5 +27,5 @@ Authorization: {{token}}
 
 ### 
 # @name WhoAmI
-GET {{baseUrl}}users/whoami
+GET {{baseUrl}}/whoami
 Authorization: {{token}}

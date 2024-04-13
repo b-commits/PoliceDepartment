@@ -13,5 +13,6 @@
 - The App Service deploy pipeline easily integrates with GitHub repo. You can set up the pipelines to build & deploy with a few clicks instead of writing the pipes from scratch
 - You can stream logs from Azure App Service
 - On App Service, you can also set up on-premise MySQL instance (this is for development only as it doesn't scale)
+- On Azure, you can set up budgeting and alerts on your email once you hit a provided budget treshold
 
 

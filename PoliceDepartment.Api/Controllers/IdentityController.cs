@@ -9,7 +9,7 @@ namespace PoliceDepartment.Api.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public sealed class UsersController(ISender mediator) : ControllerBase
+public sealed class IdentityController(ISender mediator) : ControllerBase
 {
     [HttpPost]
     [AllowAnonymous]

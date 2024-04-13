@@ -1,3 +1,6 @@
-﻿namespace PoliceDepartment.Application.Handlers.GetPoliceOfficerById;
+﻿using MediatR;
+using PoliceDepartment.Core.Entities;
 
-public sealed record GetPoliceOfficerByIdQuery(Guid Id);
+namespace PoliceDepartment.Application.Handlers.GetPoliceOfficerById;
+
+internal sealed record GetPoliceOfficerByIdQuery(Guid Id) : IRequest<PoliceOfficer?>;
