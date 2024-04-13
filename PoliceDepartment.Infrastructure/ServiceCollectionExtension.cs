@@ -23,7 +23,7 @@ public static class ServiceCollectionExtension
         services.AddScoped<IUnitOfWork, MySqlUnitOfWork>();
         services.AddScoped<IUserRepository, MySqlUserRepository>();
 
-        services.Decorate(typeof(IRequestHandler<>), typeof(RequestHandlerUnitOfWorkDecorator<>));
+        services.Decorate(typeof(IRequestHandler<,>), typeof(RequestHandlerUnitOfWorkDecorator<,>));
     }
 
     public static void AddAuth(this IServiceCollection services, IConfiguration configuration)

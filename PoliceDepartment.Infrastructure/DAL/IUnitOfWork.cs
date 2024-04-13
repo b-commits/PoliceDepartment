@@ -19,6 +19,7 @@ internal sealed class MySqlUnitOfWork(
         try
         {
             await action.Invoke();
+            await transaction.CommitAsync();
             await dbContext.SaveChangesAsync();
         }
         catch (Exception ex)

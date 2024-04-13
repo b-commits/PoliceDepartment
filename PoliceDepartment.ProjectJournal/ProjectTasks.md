@@ -23,6 +23,6 @@
 - [ ] **[PD-17]** Read signing key from KeyVault
 - [ ] **[PD-18]** Implement generic options pattern
 - [X] **[PD-19]** Add `CurrentUser` service
-- [X] **[PD-20]** Add Swagger's `ProducesResponseType` attributes on controllers
-- [ ] **[PD-21]** Add Serilog
-- [ ] **[PD-22]**
+- [X] **[PD-20]** Add *Swagger*'s `ProducesResponseType` attributes on controllers
+- [X] **[PD-21]** Add *Serilog*
+- [ ] **[PD-22]** Replace exceptions with *ErrorOr* where possible

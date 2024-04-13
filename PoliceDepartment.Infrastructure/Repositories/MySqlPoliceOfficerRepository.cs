@@ -21,7 +21,6 @@ internal sealed class MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbC
     public async Task AddAsync(PoliceOfficer policeOfficer)
     {
         await dbContext.AddAsync(policeOfficer);
-        await dbContext.SaveChangesAsync();
     }
 
     public async Task RemoveAsync(Guid id)
@@ -38,10 +37,8 @@ internal sealed class MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbC
 
     public async Task<PoliceOfficer> UpdateAsync(PoliceOfficer policeOfficer)
     {
-        var newPoliceOfficer = dbContext.PoliceOfficers.Update(policeOfficer).Entity;
+        var newPoliceOfficer = dbContext.Update(policeOfficer).Entity;
         await dbContext.SaveChangesAsync();
         return newPoliceOfficer;
     }
-
-
 }
