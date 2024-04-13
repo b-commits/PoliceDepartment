@@ -23,5 +23,9 @@
     <ItemGroup>
         <InternalsVisibleTo Include="PoliceDepartment.IntegrationTest" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <None Remove="pdlog.log" />
+    </ItemGroup>
 
 </Project>
