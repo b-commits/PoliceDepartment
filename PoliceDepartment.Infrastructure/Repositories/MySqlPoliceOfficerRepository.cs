@@ -9,19 +9,17 @@ namespace PoliceDepartment.Infrastructure.Repositories;
 internal sealed class MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbContext) : IPoliceOfficerRepository
 {
     public async Task<IEnumerable<PoliceOfficer>> GetAllAsync() 
-        => await dbContext.PoliceOfficers.ToListAsync();
+        => await dbContext.PoliceOfficers!.ToListAsync();
    
 
     public Task<PoliceOfficer?> GetByGuidAsync(Guid id)
-        => dbContext.PoliceOfficers.SingleOrDefaultAsync(policeOfficer => policeOfficer.Id == id);
+        => dbContext.PoliceOfficers!.SingleOrDefaultAsync(policeOfficer => policeOfficer.Id == id);
 
     public Task<PoliceOfficer?> GetByBadgeNumberAsync(BadgeNumber badgeNumber)
-        => dbContext.PoliceOfficers.SingleOrDefaultAsync(policeOfficer => policeOfficer.BadgeNumber == badgeNumber);
+        => dbContext.PoliceOfficers!.SingleOrDefaultAsync(policeOfficer => policeOfficer.BadgeNumber == badgeNumber);
 
-    public async Task AddAsync(PoliceOfficer policeOfficer)
-    {
-        await dbContext.AddAsync(policeOfficer);
-    }
+    public async Task AddAsync(PoliceOfficer policeOfficer) 
+            => await dbContext.AddAsync(policeOfficer);
 
     public async Task RemoveAsync(Guid id)
     {
