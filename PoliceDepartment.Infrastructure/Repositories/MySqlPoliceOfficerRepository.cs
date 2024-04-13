@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using PoliceDepartment.Core.Entities;
 using PoliceDepartment.Core.Repositories;
 using PoliceDepartment.Core.ValueObjects;
@@ -6,12 +7,16 @@ using PoliceDepartment.Infrastructure.DAL;
 
 namespace PoliceDepartment.Infrastructure.Repositories;
 
-internal sealed class MySqlPoliceOfficerRepository(PoliceDepartmentDbContext dbContext) : IPoliceOfficerRepository
+internal sealed class MySqlPoliceOfficerRepository(
+    PoliceDepartmentDbContext dbContext, 
+    IConfiguration configuration) : IPoliceOfficerRepository
 {
-    public async Task<IEnumerable<PoliceOfficer>> GetAllAsync() 
-        => await dbContext.PoliceOfficers!.ToListAsync();
-   
-
+    public async Task<IEnumerable<PoliceOfficer>> GetAllAsync()
+    {
+        var limit = configuration.GetValue<int>("GetAllApiResultLimit");
+        return await dbContext.PoliceOfficers!.Take(limit).ToListAsync();
+    } 
+    
     public Task<PoliceOfficer?> GetByGuidAsync(Guid id)
         => dbContext.PoliceOfficers!.SingleOrDefaultAsync(policeOfficer => policeOfficer.Id == id);
 
