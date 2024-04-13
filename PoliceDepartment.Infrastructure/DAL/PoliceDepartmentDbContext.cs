@@ -31,7 +31,9 @@ internal class PoliceDepartmentDbContext : DbContext
     }
 
     public PoliceDepartmentDbContext(IConfiguration configuration, 
-        ILogger<PoliceDepartmentDbContext> logger, IWebHostEnvironment environment, ILogger<AuditableEntityInterceptor> auditLogger)
+        ILogger<PoliceDepartmentDbContext> logger, 
+        IWebHostEnvironment environment, 
+        ILogger<AuditableEntityInterceptor> auditLogger)
     {
         _configuration = configuration;
         _logger = logger;
@@ -50,8 +52,7 @@ internal class PoliceDepartmentDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         const string connectionStringSection = "MySQL";
-
-        // TODO Replace this with the `DbContextOptionsBuilder` extension.
+        
         optionsBuilder.AddInterceptors(new AuditableEntityInterceptor(_auditLogger));
         
         var connectionString = _configuration.GetConnectionString(connectionStringSection);

@@ -9,6 +9,6 @@
 - Static class cannot be sealed
 - DTO is a limited representation of the object 
 - There are interceptors for that can extend the `SaveChanges()` functionality [here](https://learn.microsoft.com/en-us/ef/core/logging-events-diagnostics/interceptors)
-
+- There are two main types of deployments in Azure: Container Apps and App Services. 
 
 

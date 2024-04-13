@@ -1,5 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,6 +9,7 @@ using PoliceDepartment.Application.Security;
 using PoliceDepartment.Core.Repositories;
 using PoliceDepartment.Infrastructure.Auth;
 using PoliceDepartment.Infrastructure.DAL;
+using PoliceDepartment.Infrastructure.Decorators;
 using PoliceDepartment.Infrastructure.Repositories;
 
 namespace PoliceDepartment.Infrastructure;
@@ -18,7 +20,10 @@ public static class ServiceCollectionExtension
     {
         services.AddDbContext<PoliceDepartmentDbContext>();
         services.AddScoped<IPoliceOfficerRepository, MySqlPoliceOfficerRepository>();
+        services.AddScoped<IUnitOfWork, MySqlUnitOfWork>();
         services.AddScoped<IUserRepository, MySqlUserRepository>();
+
+        services.Decorate(typeof(IRequestHandler<>), typeof(RequestHandlerUnitOfWorkDecorator<>));
     }
 
     public static void AddAuth(this IServiceCollection services, IConfiguration configuration)

@@ -19,7 +19,7 @@ internal sealed class CreatePoliceOfficerCommandHandler(
 
         await repository.AddAsync(policeOfficer);
 
-        logger.LogInformation("Police officer {id} has been added.", request.Id);
+        logger.LogInformation("Police officer {id} has been added.", policeOfficer.Id);
 
         return policeOfficer;
     }

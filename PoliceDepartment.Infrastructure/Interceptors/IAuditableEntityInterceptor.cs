@@ -22,13 +22,13 @@ internal sealed class AuditableEntityInterceptor(ILogger<AuditableEntityIntercep
             if (auditableEntry.State == EntityState.Added)
             {
                 auditableEntry.Entity.Created = DateTimeOffset.UtcNow;
-                logger.LogInformation("Updating the Created date on {entity}", nameof(IAuditableEntity));
+                logger.LogInformation("Updating the Created date on {entity}.", nameof(IAuditableEntity));
             }
 
             if (auditableEntry.State == EntityState.Modified)
             {
                 auditableEntry.Entity.Modified = DateTimeOffset.UtcNow;
-                logger.LogInformation("Updating the Modified date on {entity}", nameof(IAuditableEntity));
+                logger.LogInformation("Updating the Modified date on {entity}.", nameof(IAuditableEntity));
             }
         }
         

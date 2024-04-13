@@ -24,3 +24,5 @@
 - [ ] **[PD-18]** Implement generic options pattern
 - [X] **[PD-19]** Add `CurrentUser` service
 - [X] **[PD-20]** Add Swagger's `ProducesResponseType` attributes on controllers
+- [ ] **[PD-21]** Add Serilog
+- [ ] **[PD-22]**
