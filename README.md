@@ -2,10 +2,10 @@
 
 - [X] **[PD-1]** Replace custom exception Handler with .NET8 `IExceptionHandler`
 - [X] **[PD-2]** Replace API responses with `ProblemDetails`
-- [X] **[PD-3]** Review logging: see if I can use a free tier NewRelic
+- [X] **[PD-3]** Review logging: free tier Log Streaming on Azure or NewRelic
   - [X] [PD-3-1] Use Serilog
   - [X] [PD-3-2] Add File and Console sinks
-  - [ ] [PD-3-3] Add NewRelic Agents
+  - [X] [PD-3-3] Set up log streaming on Azure
 - [X] **[PD-4]** Review JWT user authorization
 - [X] **[PD-5]** Deploy to Azure
   - [X] **[PD-5-1]** Create the build pipeline
