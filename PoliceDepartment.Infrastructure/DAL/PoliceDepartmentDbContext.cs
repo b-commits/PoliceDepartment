@@ -60,7 +60,7 @@ internal class PoliceDepartmentDbContext : DbContext
         
         optionsBuilder.AddInterceptors(new AuditableEntityInterceptor(_auditLogger));
 
-        var connectionString = _environment.IsDevelopment()
+        var connectionString = _environment.IsProduction()
             ? Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb")
             : _configuration.GetConnectionString(connectionStringSection);
 
