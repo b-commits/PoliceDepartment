@@ -4,25 +4,33 @@ using PoliceDepartment.Infrastructure.DAL;
 
 namespace PoliceDepartment.Infrastructure.Decorators;
 
-internal sealed class RequestHandlerUnitOfWorkDecorator<T>: IRequestHandler<T> where T : IRequest
+internal sealed class RequestHandlerUnitOfWorkDecorator<TRequest, TResponse> : IRequestHandler<TRequest, TResponse> 
+    where TRequest : IRequest<TResponse>
+    where TResponse : class
 {
     private readonly IUnitOfWork unitOfWork;
-    private readonly ILogger<RequestHandlerUnitOfWorkDecorator<T>> logger;
-    private readonly IRequestHandler<T> requestHandler;
+    private readonly ILogger<RequestHandlerUnitOfWorkDecorator<TRequest, TResponse>> logger;
+    private readonly IRequestHandler<TRequest, TResponse> requestHandler;
 
-    public RequestHandlerUnitOfWorkDecorator(IUnitOfWork unitOfWork, 
-        IRequestHandler<T> requestHandler, 
-        ILogger<RequestHandlerUnitOfWorkDecorator<T>> logger)
+    public RequestHandlerUnitOfWorkDecorator(
+        IUnitOfWork unitOfWork, 
+        IRequestHandler<TRequest, TResponse> requestHandler, 
+        ILogger<RequestHandlerUnitOfWorkDecorator<TRequest, TResponse>> logger)
     {
         this.unitOfWork = unitOfWork;
         this.requestHandler = requestHandler;
         this.logger = logger;
     }
-    
-    public async Task Handle(T request, CancellationToken cancellationToken)
+        
+    public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Running decoratored {decorator} with type {type}.", 
-            nameof(RequestHandlerUnitOfWorkDecorator<T>), typeof(T));
-        await unitOfWork.ExecuteAsync(() => requestHandler.Handle(request, cancellationToken));
+        logger.LogInformation("Running decorated {decorator} with type {type}.",
+            nameof(RequestHandlerUnitOfWorkDecorator<TRequest, TResponse>), typeof(TRequest));
+        
+        TResponse? response = null;
+        await unitOfWork.ExecuteAsync(async () => response = await requestHandler.Handle(request, cancellationToken));
+        
+        return response ?? throw new InvalidCastException();
     }
+
 }
