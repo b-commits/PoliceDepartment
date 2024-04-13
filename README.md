@@ -30,3 +30,4 @@
 - [X] **[PD-21]** Add *Serilog*
 - [ ] **[PD-22]** Replace exceptions with *ErrorOr* where possible
 - [ ] **[PD-23]** Implement Azure KeyVault connection
+- [ ] **[PD-24]** SignalR notification hub
