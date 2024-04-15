@@ -6,7 +6,6 @@ using PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
 using PoliceDepartment.Application.Handlers.GetPoliceOfficerById;
 using PoliceDepartment.Application.Handlers.GetPoliceOfficers;
 using PoliceDepartment.Application.Handlers.UpdatePoliceOfficer;
-using PoliceDepartment.Application.Services;
 using PoliceDepartment.Core.Entities;
 
 namespace PoliceDepartment.Api.Controllers;
@@ -14,9 +13,7 @@ namespace PoliceDepartment.Api.Controllers;
 [ApiController]
 [Authorize]
 [Route("[controller]")]
-public sealed class PoliceOfficersController(
-    IPoliceOfficerService policeOfficersService,
-    ISender mediator)
+public sealed class PoliceOfficersController(ISender mediator)
     : ControllerBase
 {
     [HttpGet]
@@ -54,8 +51,5 @@ public sealed class PoliceOfficersController(
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> Delete(DeletePoliceOfficerCommand command)
-    {
-        await mediator.Send(command);
-        return NoContent();
-    }
+        => Ok(await mediator.Send(command));
 }

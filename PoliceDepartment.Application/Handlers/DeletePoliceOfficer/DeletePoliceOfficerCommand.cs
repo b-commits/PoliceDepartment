@@ -2,4 +2,4 @@
 
 namespace PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
 
-public record DeletePoliceOfficerCommand(Guid Id) : IRequest;
+public record DeletePoliceOfficerCommand(Guid Id) : IRequest<bool>;
