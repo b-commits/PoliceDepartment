@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
 using PoliceDepartment.Application.Handlers.DeletePoliceOfficer;
+using PoliceDepartment.Application.Handlers.GetPoliceOfficerById;
+using PoliceDepartment.Application.Handlers.GetPoliceOfficers;
 using PoliceDepartment.Application.Handlers.UpdatePoliceOfficer;
 using PoliceDepartment.Application.Services;
 using PoliceDepartment.Core.Entities;
@@ -22,15 +24,15 @@ public sealed class PoliceOfficersController(
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<IEnumerable<PoliceOfficer>>> Get()
-        => Ok(await policeOfficersService.GetAllAsync());
+        => Ok(await mediator.Send(new GetPoliceOfficersQuery()));
     
 
     [HttpGet("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PoliceOfficer>> Get(Guid id)
-        => Ok(await policeOfficersService.GetByGuidAsync(id));
+    public async Task<ActionResult<PoliceOfficer>> Get(GetPoliceOfficerByIdQuery query)
+        => Ok(await mediator.Send(query));
     
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
@@ -51,9 +53,9 @@ public sealed class PoliceOfficersController(
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult> Delete(Guid id)
+    public async Task<ActionResult> Delete(DeletePoliceOfficerCommand command)
     {
-        await policeOfficersService.RemoveAsync(new DeletePoliceOfficerCommand(id));
+        await mediator.Send(command);
         return NoContent();
     }
 }

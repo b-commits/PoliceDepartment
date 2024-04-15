@@ -25,4 +25,8 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Handlers\Health\HealthQuery.cs" />
+    </ItemGroup>
+
 </Project>
