@@ -30,3 +30,9 @@
 - [X] **[PD-21]** Add *Serilog*
 - [ ] **[PD-22]** Replace exceptions with *ErrorOr* where possible
 - [X] **[PD-23]** Implement Azure KeyVault connection
+- [ ] **[PD-24]** Implement caching (MemoryCache) and test perofrmance
+- 
+
+### [PD] Infrastructure Tracker
+
+[Infrastructure Diagram](./Static/Diagram1.png)

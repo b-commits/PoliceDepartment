@@ -1,5 +1,3 @@
-using Microsoft.Extensions.Logging;
-
 namespace PoliceDepartment.Infrastructure.Helpers;
 
 internal static class AzureOnPremiseMySqlConnectionStringNormalizer

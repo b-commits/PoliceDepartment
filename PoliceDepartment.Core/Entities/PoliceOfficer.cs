@@ -1,11 +1,8 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using PoliceDepartment.Core.Primitives;
+﻿using PoliceDepartment.Core.Primitives;
 using PoliceDepartment.Core.ValueObjects;
 
 namespace PoliceDepartment.Core.Entities;
 
-[SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
-[SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Local")]
 public sealed class PoliceOfficer(
     Guid id,
     string firstName,

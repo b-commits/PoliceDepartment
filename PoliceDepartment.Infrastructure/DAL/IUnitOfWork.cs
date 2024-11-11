@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace PoliceDepartment.Infrastructure.DAL;
@@ -8,7 +9,7 @@ internal interface IUnitOfWork
 }
 
 internal sealed class MySqlUnitOfWork(
-    PoliceDepartmentDbContext dbContext, 
+    DbContext dbContext, 
     ILogger<MySqlUnitOfWork> logger)
     : IUnitOfWork
 {
