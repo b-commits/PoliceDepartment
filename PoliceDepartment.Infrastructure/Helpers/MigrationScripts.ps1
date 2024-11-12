@@ -3,3 +3,6 @@ dotnet ef --startup-project ../PoliceDepartment.Api migrations add InitialMigrat
 
 # Execute migration:
 dotnet ef --startup-project ../PoliceDepartment.Api database update
+
+# Scripts:
+dotnet ef script -o migrationScript.sql

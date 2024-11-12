@@ -10,7 +10,7 @@
 - [X] **[PD-5]** Deploy to Azure
   - [X] **[PD-5-1]** Create the build pipeline
   - [X] **[PD-5-2]** Create the deploy pipeline
-  - [X] **[PD-5-3]** Set up Azure App Service? Use K8 Cluster deployment?
+  - [X] **[PD-5-3]** Set up Azure App Service
 - [X] **[PD-6]** Replace `DateTimeProvider` with the .NET8 library
 - [X] **[PD-7]** Add `CreatedDate` and `LastModifed` to all tables
 - [X] **[PD-8]** Refactor handlers to use primary constructors
@@ -21,7 +21,7 @@
 - [ ] **[PD-12]** Implement caching with Redis
 - [X] **[PD-13]** Fix data seeding on startup
 - [ ] **[PD-14]** Replace manual seeder with Faker or Mocker or whatever
-- [ ] **[PD-15]** Implement transactions in the handler with `UnitOfWork`
+- [X] **[PD-15]** Implement transactions in the handler with `UnitOfWork`
 - [ ] **[PD-16]** Fix binding of object in command; introduce mapping
 - [ ] **[PD-17]** Read signing key from KeyVault
 - [ ] **[PD-18]** Implement generic options pattern
@@ -30,7 +30,7 @@
 - [X] **[PD-21]** Add *Serilog*
 - [ ] **[PD-22]** Replace exceptions with *ErrorOr* where possible
 - [X] **[PD-23]** Implement Azure KeyVault connection
-- [ ] **[PD-24]** Implement caching (MemoryCache) and test perofrmance
+- [ ] **[PD-24]** Implement caching (MemoryCache) and test perfrmance
 - 
 
 ### [PD] Infrastructure Tracker
