@@ -30,7 +30,6 @@ public static class ServiceCollectionExtension
     public static void AddAuth(this IServiceCollection services, IConfiguration configuration)
     {
         var options = new AuthOptions();
-        var azureAd = new AzureAuthOptions();
         
         configuration.GetSection(AuthOptions.OptionsKey).Bind(options);
 
@@ -38,14 +37,11 @@ public static class ServiceCollectionExtension
             .AddScoped<ICurrentUserService, CurrentUserService>()
             .AddHttpContextAccessor()
             .AddSingleton<JwtSecurityTokenHandler>()
-            .AddSingleton<IAuthenticator, Authenticator>()
-            .AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            });
-        
-        services.AddMicrosoftIdentityWebApiAuthentication(configuration);
+            .AddSingleton<IAuthenticator, Authenticator>();
+
+        services
+            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddMicrosoftIdentityWebApi(configuration);
         services.AddAuthorization();
     }
 }

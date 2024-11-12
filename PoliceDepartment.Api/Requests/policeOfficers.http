@@ -17,7 +17,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWFkZXJAc
   }
 }
 
-### 
+### az account get-access-token --resource api://d5c74c4c-4c4b-4376-9cfb-6386425be6d6
 # @name GetPoliceOfficers
 GET {{baseUrl}}
 Authorization: {{token}}
