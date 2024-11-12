@@ -48,8 +48,8 @@ internal class PoliceDepartmentDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<PoliceOfficer>().ToTable("PoliceOfficer");
-        modelBuilder.Entity<User>().ToTable("User").Property(e => e.Role).HasColumnType("nvarchar(30)");
+        modelBuilder.Entity<PoliceOfficer>().ToTable(nameof(PoliceOfficer));
+        modelBuilder.Entity<User>().ToTable(nameof(User)).Property(e => e.Role).HasColumnType("nvarchar(30)");
         
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         modelBuilder.Seed();
@@ -65,12 +65,12 @@ internal class PoliceDepartmentDbContext : DbContext
             ? AzureOnPremiseMySqlConnectionStringNormalizer.Normalize(Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb"))
             : _configuration.GetConnectionString(connectionStringSection);
 
-        _logger.LogInformation("{name} is {connectionString}.", 
+        _logger.LogInformation("{Name} is {ConnectionString}.", 
             nameof(connection), connection);
         
         if (string.IsNullOrEmpty(connection))
         {
-            _logger.LogWarning("Connection string for {connectionString} could not be found. Please verify the appSettings.", 
+            _logger.LogWarning("Connection string for {ConnectionString} could not be found. Please verify the appSettings.", 
                 connection);
             return;
         }

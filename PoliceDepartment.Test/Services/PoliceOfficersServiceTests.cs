@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-using LanguageExt.Common;
 using NSubstitute;
 using PoliceDepartment.Application.Exceptions;
 using PoliceDepartment.Application.Handlers.CreatePoliceOfficer;
@@ -37,23 +35,6 @@ public sealed class PoliceOfficersServiceTests
 
     private Type doStuff<T>()
         => typeof(T);
-    
-    
-
-
-        
-
-
-    [Fact]
-    public object Out_Parameters()
-    {
-        var myObject = new { A = 3 }; // anonymous object
-        var myObjectType = myObject.GetType();
-        var result = new Result<string>();
-
-
-        return null;
-    }
 
 
     [Fact]
@@ -136,7 +117,7 @@ public sealed class PoliceOfficersServiceTests
     }
 
     [Fact]
-    public void AddAsync_BadgeNumberAlreadyRegistered_ThrowsPoliceDepartmentException()
+    public async void AddAsync_BadgeNumberAlreadyRegistered_ThrowsPoliceDepartmentException()
     {
         // Arrange
         const string repeatingBadge = "#-123-344-545";
@@ -151,6 +132,6 @@ public sealed class PoliceOfficersServiceTests
         async Task Action() => await _sut.AddAsync(command);
 
         // Assert
-        Assert.ThrowsAsync<BadgeNumberAlreadyRegisteredException>(Action);
+        await Assert.ThrowsAsync<BadgeNumberAlreadyRegisteredException>(Action);
     }
 }

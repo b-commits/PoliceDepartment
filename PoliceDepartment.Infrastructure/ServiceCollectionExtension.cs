@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Identity.Web;
 using Microsoft.IdentityModel.Tokens;
 using PoliceDepartment.Application.Security;
 using PoliceDepartment.Core.Repositories;
@@ -29,30 +30,22 @@ public static class ServiceCollectionExtension
     public static void AddAuth(this IServiceCollection services, IConfiguration configuration)
     {
         var options = new AuthOptions();
-        configuration.GetSection(AuthOptions.OptionsKey).Bind(options);
+        var azureAd = new AzureAuthOptions();
         
+        configuration.GetSection(AuthOptions.OptionsKey).Bind(options);
+
         services
             .AddScoped<ICurrentUserService, CurrentUserService>()
             .AddHttpContextAccessor()
             .AddSingleton<JwtSecurityTokenHandler>()
-
             .AddSingleton<IAuthenticator, Authenticator>()
             .AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(x =>
-            {
-                x.Audience = options.Audience;
-                x.IncludeErrorDetails = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidIssuer = options.Issuer,
-                    ClockSkew = TimeSpan.Zero,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SigningKey))
-                };
             });
+        
+        services.AddMicrosoftIdentityWebApiAuthentication(configuration);
         services.AddAuthorization();
     }
 }

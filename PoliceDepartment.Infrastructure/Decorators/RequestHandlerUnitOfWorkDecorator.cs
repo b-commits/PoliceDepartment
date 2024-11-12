@@ -24,7 +24,7 @@ internal sealed class RequestHandlerUnitOfWorkDecorator<TRequest, TResponse> : I
         
     public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Running decorated {decorator} with type {type}.",
+        logger.LogInformation("Running decorated {Decorator} with type {Type}.",
             nameof(RequestHandlerUnitOfWorkDecorator<TRequest, TResponse>), typeof(TRequest));
         
         TResponse? response = null;

@@ -1,0 +1,613 @@
+2024-11-12 17:15:55.395 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:15:55.822 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:15:55.825 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:15:55.827 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:15:55.827 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:16:02.160 +01:00 [INF] Application is shutting down...
+2024-11-12 17:16:06.946 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:16:07.524 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:16:07.534 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:16:07.539 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:16:07.539 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:17:00.277 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:17:00.927 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:17:00.935 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:17:00.938 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:17:00.938 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:17:12.510 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:17:12.636 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: IDW10106: The 'ClientId' option must be provided. 
+   at Microsoft.Identity.Web.MergedOptionsValidation.Validate(MergedOptions options)
+   at Microsoft.Identity.Web.MicrosoftIdentityWebApiAuthenticationBuilderExtensions.<>c__DisplayClass3_0.<AddMicrosoftIdentityWebApiImplementation>b__0(JwtBearerOptions options, IServiceProvider serviceProvider, IMergedOptionsStore mergedOptionsMonitor, IOptionsMonitor`1 msIdOptionsMonitor)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-12 17:17:12.736 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 500 null application/problem+json; charset=utf-8 226.6858ms
+2024-11-12 17:18:03.154 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:18:03.630 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:18:03.633 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:18:03.634 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:18:03.634 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:18:17.132 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:18:17.231 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: IDW10106: The 'ClientId' option must be provided. 
+   at Microsoft.Identity.Web.MergedOptionsValidation.Validate(MergedOptions options)
+   at Microsoft.Identity.Web.MicrosoftIdentityWebApiAuthenticationBuilderExtensions.<>c__DisplayClass3_0.<AddMicrosoftIdentityWebApiImplementation>b__0(JwtBearerOptions options, IServiceProvider serviceProvider, IMergedOptionsStore mergedOptionsMonitor, IOptionsMonitor`1 msIdOptionsMonitor)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-12 17:18:17.324 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 500 null application/problem+json; charset=utf-8 192.9769ms
+2024-11-12 17:19:43.987 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:19:44.427 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:19:44.429 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:19:44.430 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:19:44.430 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:19:52.761 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:19:52.861 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: IDW10106: The 'ClientId' option must be provided. 
+   at Microsoft.Identity.Web.MergedOptionsValidation.Validate(MergedOptions options)
+   at Microsoft.Identity.Web.MicrosoftIdentityWebApiAuthenticationBuilderExtensions.<>c__DisplayClass3_0.<AddMicrosoftIdentityWebApiImplementation>b__0(JwtBearerOptions options, IServiceProvider serviceProvider, IMergedOptionsStore mergedOptionsMonitor, IOptionsMonitor`1 msIdOptionsMonitor)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-12 17:19:52.978 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 500 null application/problem+json; charset=utf-8 217.5837ms
+2024-11-12 17:20:08.347 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:20:08.356 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: IDW10106: The 'ClientId' option must be provided. 
+   at Microsoft.Identity.Web.MergedOptionsValidation.Validate(MergedOptions options)
+   at Microsoft.Identity.Web.MicrosoftIdentityWebApiAuthenticationBuilderExtensions.<>c__DisplayClass3_0.<AddMicrosoftIdentityWebApiImplementation>b__0(JwtBearerOptions options, IServiceProvider serviceProvider, IMergedOptionsStore mergedOptionsMonitor, IOptionsMonitor`1 msIdOptionsMonitor)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-12 17:20:08.359 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 500 null application/problem+json; charset=utf-8 12.3117ms
+2024-11-12 17:21:05.387 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:21:06.108 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:21:06.134 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:21:06.134 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:21:06.134 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:21:15.599 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:21:15.701 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: IDW10106: The 'ClientId' option must be provided. 
+   at Microsoft.Identity.Web.MergedOptionsValidation.Validate(MergedOptions options)
+   at Microsoft.Identity.Web.MicrosoftIdentityWebApiAuthenticationBuilderExtensions.<>c__DisplayClass3_0.<AddMicrosoftIdentityWebApiImplementation>b__0(JwtBearerOptions options, IServiceProvider serviceProvider, IMergedOptionsStore mergedOptionsMonitor, IOptionsMonitor`1 msIdOptionsMonitor)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-12 17:21:15.805 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 500 null application/problem+json; charset=utf-8 206.6232ms
+2024-11-12 17:22:17.202 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:22:17.640 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:22:17.643 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:22:17.644 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:22:17.644 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:22:20.931 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:22:21.041 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: IDW10106: The 'ClientId' option must be provided. 
+   at Microsoft.Identity.Web.MergedOptionsValidation.Validate(MergedOptions options)
+   at Microsoft.Identity.Web.MicrosoftIdentityWebApiAuthenticationBuilderExtensions.<>c__DisplayClass3_0.<AddMicrosoftIdentityWebApiImplementation>b__0(JwtBearerOptions options, IServiceProvider serviceProvider, IMergedOptionsStore mergedOptionsMonitor, IOptionsMonitor`1 msIdOptionsMonitor)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-12 17:22:21.167 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 500 null application/problem+json; charset=utf-8 237.6823ms
+2024-11-12 17:26:29.758 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:26:30.432 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:26:30.458 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:26:30.458 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:26:30.458 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:26:35.925 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:26:36.399 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:26:36.408 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:26:36.409 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:26:36.409 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:28:24.490 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:28:24.924 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:28:24.926 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:28:24.926 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:28:24.926 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:28:26.614 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:28:26.714 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: IDW10106: The 'ClientId' option must be provided. 
+   at Microsoft.Identity.Web.MergedOptionsValidation.Validate(MergedOptions options)
+   at Microsoft.Identity.Web.MicrosoftIdentityWebApiAuthenticationBuilderExtensions.<>c__DisplayClass3_0.<AddMicrosoftIdentityWebApiImplementation>b__0(JwtBearerOptions options, IServiceProvider serviceProvider, IMergedOptionsStore mergedOptionsMonitor, IOptionsMonitor`1 msIdOptionsMonitor)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-12 17:28:26.815 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 500 null application/problem+json; charset=utf-8 201.427ms
+2024-11-12 17:31:24.695 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:31:25.288 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:31:25.290 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:31:25.291 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:31:25.291 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:31:44.062 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:31:44.588 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:31:44.596 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:31:44.597 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:31:44.597 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:31:56.049 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:31:56.647 +01:00 [INF] Microsoft.IdentityModel Version: 8.2.0.0. Date 11/12/2024 16:31:56. PII logging is OFF. See https://aka.ms/IdentityModel/PII for details. 
+IDX10264: Reading issuer signing keys from validation parameters and configuration.
+2024-11-12 17:31:56.647 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:31:56.650 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.650 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.651 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.651 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.651 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.651 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:31:56.652 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:31:56.653 +01:00 [ERR] IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:31:56.661 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-11-12 17:31:56.689 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:31:56.723 +01:00 [INF] Executing endpoint 'PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api)'
+2024-11-12 17:31:56.737 +01:00 [INF] Route matched with {action = "Get", controller = "PoliceOfficers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoliceDepartment.Core.Entities.PoliceOfficer]]] Get() on controller PoliceDepartment.Api.Controllers.PoliceOfficersController (PoliceDepartment.Api).
+2024-11-12 17:31:56.747 +01:00 [INF] Executing action method PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api) - Validation state: "Valid"
+2024-11-12 17:32:00.263 +01:00 [INF] Running decorated RequestHandlerUnitOfWorkDecorator with type PoliceDepartment.Application.Handlers.GetPoliceOfficers.GetPoliceOfficersQuery.
+2024-11-12 17:32:03.593 +01:00 [INF] connection is Server=localhost;Database=dev_police_department;Uid=root;Pwd=root;.
+2024-11-12 17:32:09.561 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-12 17:32:09.843 +01:00 [INF] Executed DbCommand (145ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`BadgeNumber`, `p`.`BirthDate`, `p`.`Created`, `p`.`FirstName`, `p`.`LastName`, `p`.`Modified`
+FROM `PoliceOfficer` AS `p`
+LIMIT @__p_0
+2024-11-12 17:32:09.911 +01:00 [INF] Executed action method PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13161.3552ms.
+2024-11-12 17:32:09.923 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoliceDepartment.Core.Entities.PoliceOfficer, PoliceDepartment.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-12 17:32:10.028 +01:00 [INF] Executed action PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api) in 13287.8535ms
+2024-11-12 17:32:10.030 +01:00 [INF] Executed endpoint 'PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api)'
+2024-11-12 17:32:10.049 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 200 null application/json; charset=utf-8 14000.4006ms
+2024-11-12 17:32:58.313 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:32:58.735 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:32:58.737 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:32:58.738 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:32:58.738 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:33:12.660 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:33:13.192 +01:00 [INF] Microsoft.IdentityModel Version: 8.2.0.0. Date 11/12/2024 16:33:13. PII logging is OFF. See https://aka.ms/IdentityModel/PII for details. 
+IDX10264: Reading issuer signing keys from validation parameters and configuration.
+2024-11-12 17:33:13.192 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:33:13.195 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.196 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.197 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.198 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.198 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:33:13.198 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:33:13.198 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:33:13.198 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:33:13.199 +01:00 [ERR] IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:33:13.207 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-11-12 17:33:13.235 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:33:13.269 +01:00 [INF] Executing endpoint 'PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api)'
+2024-11-12 17:33:13.283 +01:00 [INF] Route matched with {action = "Get", controller = "PoliceOfficers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoliceDepartment.Core.Entities.PoliceOfficer]]] Get() on controller PoliceDepartment.Api.Controllers.PoliceOfficersController (PoliceDepartment.Api).
+2024-11-12 17:33:13.292 +01:00 [INF] Executing action method PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api) - Validation state: "Valid"
+2024-11-12 17:33:17.357 +01:00 [INF] Running decorated RequestHandlerUnitOfWorkDecorator with type PoliceDepartment.Application.Handlers.GetPoliceOfficers.GetPoliceOfficersQuery.
+2024-11-12 17:33:17.586 +01:00 [INF] connection is Server=localhost;Database=dev_police_department;Uid=root;Pwd=root;.
+2024-11-12 17:35:01.109 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:35:01.556 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:35:01.584 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:35:01.584 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:35:01.584 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:35:13.647 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:35:14.114 +01:00 [INF] Microsoft.IdentityModel Version: 8.2.0.0. Date 11/12/2024 16:35:14. PII logging is OFF. See https://aka.ms/IdentityModel/PII for details. 
+IDX10264: Reading issuer signing keys from validation parameters and configuration.
+2024-11-12 17:35:14.114 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:35:14.117 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.117 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.118 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.118 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:35:14.119 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:35:14.120 +01:00 [ERR] IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:35:14.128 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-11-12 17:35:14.154 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:35:14.238 +01:00 [INF] Executing endpoint 'PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api)'
+2024-11-12 17:35:14.256 +01:00 [INF] Route matched with {action = "Get", controller = "PoliceOfficers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoliceDepartment.Core.Entities.PoliceOfficer]]] Get() on controller PoliceDepartment.Api.Controllers.PoliceOfficersController (PoliceDepartment.Api).
+2024-11-12 17:35:14.267 +01:00 [INF] Executing action method PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api) - Validation state: "Valid"
+2024-11-12 17:35:19.029 +01:00 [INF] Running decorated RequestHandlerUnitOfWorkDecorator with type PoliceDepartment.Application.Handlers.GetPoliceOfficers.GetPoliceOfficersQuery.
+2024-11-12 17:37:35.858 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:37:36.175 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:37:36.177 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:37:36.177 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:37:36.177 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:38:10.524 +01:00 [INF] Application is shutting down...
+2024-11-12 17:41:50.389 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:41:51.002 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:41:51.004 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:41:51.005 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:41:51.005 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:42:04.337 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:42:04.847 +01:00 [INF] Microsoft.IdentityModel Version: 8.2.0.0. Date 11/12/2024 16:42:04. PII logging is OFF. See https://aka.ms/IdentityModel/PII for details. 
+IDX10264: Reading issuer signing keys from validation parameters and configuration.
+2024-11-12 17:42:04.847 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:42:04.850 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.851 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:42:04.852 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:42:04.853 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:42:04.853 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:42:04.854 +01:00 [ERR] IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:42:04.863 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-11-12 17:42:04.893 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:42:04.925 +01:00 [INF] Executing endpoint 'PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api)'
+2024-11-12 17:42:04.940 +01:00 [INF] Route matched with {action = "Get", controller = "PoliceOfficers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoliceDepartment.Core.Entities.PoliceOfficer]]] Get() on controller PoliceDepartment.Api.Controllers.PoliceOfficersController (PoliceDepartment.Api).
+2024-11-12 17:42:04.950 +01:00 [INF] Executing action method PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api) - Validation state: "Valid"
+2024-11-12 17:42:07.440 +01:00 [INF] Running decorated RequestHandlerUnitOfWorkDecorator with type PoliceDepartment.Application.Handlers.GetPoliceOfficers.GetPoliceOfficersQuery.
+2024-11-12 17:42:34.675 +01:00 [INF] connection is Server=localhost;Database=dev_police_department;Uid=root;Pwd=root;.
+2024-11-12 17:45:04.495 +01:00 [INF] User profile is available. Using '/Users/bartek/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-11-12 17:45:04.993 +01:00 [INF] Now listening on: https://localhost:5000
+2024-11-12 17:45:04.996 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-12 17:45:04.997 +01:00 [INF] Hosting environment: Development
+2024-11-12 17:45:04.997 +01:00 [INF] Content root path: /Users/bartek/Projects/PoliceDepartment/PoliceDepartment.Api
+2024-11-12 17:45:20.603 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5000/PoliceOfficers - null 0
+2024-11-12 17:45:21.127 +01:00 [INF] Microsoft.IdentityModel Version: 8.2.0.0. Date 11/12/2024 16:45:21. PII logging is OFF. See https://aka.ms/IdentityModel/PII for details. 
+IDX10264: Reading issuer signing keys from validation parameters and configuration.
+2024-11-12 17:45:21.127 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:45:21.131 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.132 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.133 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.133 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.X509SecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX14000: Signature validation of this JWT is not supported for: Algorithm: 'HS256', SecurityKey: '[PII of type 'Microsoft.IdentityModel.Tokens.RsaSecurityKey' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX10243: Reading issuer signing keys from validation parameters.
+2024-11-12 17:45:21.134 +01:00 [INF] IDX10265: Reading issuer signing keys from configuration.
+2024-11-12 17:45:21.135 +01:00 [ERR] IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:45:21.145 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-11-12 17:45:21.167 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: '3PaK4EfyBNQu3CtjYsa3YmhQ5E0', InternalId: 'G36ByiBJf4FJyQI0G2iTJebA9eVA_l0U0CWxNSjOgGg'. , KeyId: 3PaK4EfyBNQu3CtjYsa3YmhQ5E0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'k8kbXTgyy1QKJ54n61Qg3OldE_E', InternalId: 'kT_njOCa_L5Lq_Zj2gYSarCBfpX11yr_uP_wGNVFaRc'. , KeyId: k8kbXTgyy1QKJ54n61Qg3OldE_E
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'zxeg2WONpTkwN5GmeYcuTdtC6J0', InternalId: 'hZKRXjUdItl0lQbxMJqZ_JDfVMWo8sg6rt7IAk5OP8c'. , KeyId: zxeg2WONpTkwN5GmeYcuTdtC6J0
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'JBcrsrKJkcQB9HQF5wBfXN_pYcE', InternalId: 'W1XSqecv-7CxFAhWyiLFcDijTtoy_VjZbLYh77quvF4'. , KeyId: JBcrsrKJkcQB9HQF5wBfXN_pYcE
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'Fdkuxg4kKVKOWUdliHLR1HArDmg', InternalId: 'ZVKL1JFNa2LFZm_JscKjuuzEoNYDtA69hOygjjOZVrM'. , KeyId: Fdkuxg4kKVKOWUdliHLR1HArDmg
+Microsoft.IdentityModel.Tokens.X509SecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'RIT15NfQKEtO52Tt3FFujrvMbBk'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+Microsoft.IdentityModel.Tokens.RsaSecurityKey, KeyId: 'RIT15NfQKEtO52Tt3FFujrvMbBk', InternalId: 'hlIFdczkXIjdBVkf6gy7HevbJOT7gyTI9z3NkulmGAU'. , KeyId: RIT15NfQKEtO52Tt3FFujrvMbBk
+'. Number of keys in TokenValidationParameters: '0'. 
+Number of keys in Configuration: '12'. 
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2024-11-12 17:45:21.198 +01:00 [INF] Executing endpoint 'PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api)'
+2024-11-12 17:45:21.215 +01:00 [INF] Route matched with {action = "Get", controller = "PoliceOfficers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoliceDepartment.Core.Entities.PoliceOfficer]]] Get() on controller PoliceDepartment.Api.Controllers.PoliceOfficersController (PoliceDepartment.Api).
+2024-11-12 17:45:21.225 +01:00 [INF] Executing action method PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api) - Validation state: "Valid"
+2024-11-12 17:45:23.535 +01:00 [INF] Running decorated RequestHandlerUnitOfWorkDecorator with type PoliceDepartment.Application.Handlers.GetPoliceOfficers.GetPoliceOfficersQuery.
+2024-11-12 17:45:27.762 +01:00 [INF] connection is Server=localhost;Database=dev_police_department;Uid=root;Pwd=root;.
+2024-11-12 17:45:53.104 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-12 17:45:53.230 +01:00 [INF] Executed DbCommand (31ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`BadgeNumber`, `p`.`BirthDate`, `p`.`Created`, `p`.`FirstName`, `p`.`LastName`, `p`.`Modified`
+FROM `PoliceOfficer` AS `p`
+LIMIT @__p_0
+2024-11-12 17:46:09.740 +01:00 [INF] Executed action method PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 48501.3335ms.
+2024-11-12 17:46:09.762 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoliceDepartment.Core.Entities.PoliceOfficer, PoliceDepartment.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-12 17:46:09.959 +01:00 [INF] Executed action PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api) in 48741.7548ms
+2024-11-12 17:46:09.960 +01:00 [INF] Executed endpoint 'PoliceDepartment.Api.Controllers.PoliceOfficersController.Get (PoliceDepartment.Api)'
+2024-11-12 17:46:09.985 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5000/PoliceOfficers - 200 null application/json; charset=utf-8 49383.1607ms
