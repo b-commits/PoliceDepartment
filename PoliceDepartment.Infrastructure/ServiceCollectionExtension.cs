@@ -1,11 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Identity.Web;
-using Microsoft.IdentityModel.Tokens;
 using PoliceDepartment.Application.Security;
 using PoliceDepartment.Core.Repositories;
 using PoliceDepartment.Infrastructure.Auth;
