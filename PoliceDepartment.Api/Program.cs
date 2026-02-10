@@ -27,12 +27,22 @@ builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddScoped<IPoliceOfficerService, PoliceOfficersService>();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
 app.ConfigureSwagger();
 app.UseExceptionHandler();
 app.UseHttpsRedirection();
+app.UseCors();
 app.MapControllers();
 
 await app.RunAsync();
